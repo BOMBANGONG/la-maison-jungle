@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/Footer.css";
+import Textfield from "./Textfield";
 
 function Footer() {
   const [inputValue, setInputValue] = useState("");
@@ -22,12 +23,7 @@ function Footer() {
         Pour les passionné·e·s de plantes 🌿🌱🌵
       </div>
       <div className="lmj-footer-elem">Laissez-nous votre mail :</div>
-      <input
-        placeholder="Entrez votre mail"
-        onChange={handleInput}
-        value={inputValue}
-        onBlur={handleBlur}
-      />
+      <Textfield />
     </footer>
   );
 }
