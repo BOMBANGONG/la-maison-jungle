@@ -1,10 +1,10 @@
 import React from "react";
 import UiButton from "@ied/ui-button";
 
-const Button = () => {
+const Button = (props) => {
   return (
     <div>
-      <UiButton>Default</UiButton>
+      <UiButton {...props}></UiButton>
     </div>
   );
 };
