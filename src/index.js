@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./styles/index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 //Button component
-import "@ied/ui-core/dist/ui-core.min.css";
+//import "@ied/ui-core/dist/ui-core.min.css";
 import "@ied/ui-button/dist/ui-button.min.css";
 import "@ied/ui-progress/dist/ui-progress.min.css";
 

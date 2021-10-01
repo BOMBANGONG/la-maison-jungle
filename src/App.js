@@ -1,16 +1,12 @@
-import Button from "./components/Button";
-import Card from "./components/Card";
-import Select from "./components/Select";
-import Textfield from "./components/Textfield";
+import Banner from "./components/Banner";
+import Cart from "./components/Cart";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Button />
-      <Card />
-      <Select />
-      <Textfield />
+      <Banner />
+      <Cart />
     </div>
   );
 }
