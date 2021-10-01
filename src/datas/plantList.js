@@ -6,6 +6,7 @@ export const plantList = [
     isBestSale: true,
     light: 2,
     water: 3,
+    price: 15,
   },
   {
     name: "ficus lyrata",
@@ -13,6 +14,7 @@ export const plantList = [
     id: "2ab",
     light: 3,
     water: 1,
+    price: 16,
   },
   {
     name: "pothos argenté",
@@ -20,6 +22,7 @@ export const plantList = [
     id: "3sd",
     light: 1,
     water: 2,
+    price: 17,
   },
   {
     name: "yucca",
@@ -27,6 +30,7 @@ export const plantList = [
     id: "4kk",
     light: 3,
     water: 1,
+    price: 18,
   },
   {
     name: "olivier",
@@ -34,6 +38,7 @@ export const plantList = [
     id: "5pl",
     light: 3,
     water: 1,
+    price: 15,
   },
   {
     name: "géranium",
@@ -41,6 +46,7 @@ export const plantList = [
     id: "6uo",
     light: 2,
     water: 2,
+    price: 16,
   },
   {
     name: "basilique",
@@ -49,6 +55,7 @@ export const plantList = [
     isBestSale: true,
     light: 2,
     water: 3,
+    price: 17,
   },
   {
     name: "aloe",
@@ -56,6 +63,7 @@ export const plantList = [
     id: "8fp",
     light: 2,
     water: 1,
+    price: 18,
   },
   {
     name: "succulente",
@@ -63,5 +71,6 @@ export const plantList = [
     id: "9vn",
     light: 2,
     water: 1,
+    price: 15,
   },
 ];

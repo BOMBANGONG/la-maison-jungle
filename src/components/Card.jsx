@@ -3,7 +3,7 @@ import UiButton from "@ied/ui-button";
 import UiCard from "@ied/ui-card";
 import CareScale from "./CareScale";
 
-const Card = ({ id, name, water, light }) => {
+const Card = ({ id, name, water, light, addToCart, price }) => {
   return (
     <div>
       <UiCard skeleton ripple hover>
@@ -12,7 +12,9 @@ const Card = ({ id, name, water, light }) => {
         <UiCard.Actions>
           <CareScale careType="water" scaleValue={water} />
           <CareScale careType="light" scaleValue={light} />
-          <UiButton primary>Add</UiButton>
+          <UiButton primary onClick={() => addToCart(name, price)}>
+            Add
+          </UiButton>
         </UiCard.Actions>
       </UiCard>
     </div>
