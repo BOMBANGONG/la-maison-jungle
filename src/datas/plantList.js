@@ -7,6 +7,7 @@ export const plantList = [
     light: 2,
     water: 3,
     price: 15,
+    description: "this plant is awesome. You should buy it!!!",
   },
   {
     name: "ficus lyrata",
@@ -15,6 +16,7 @@ export const plantList = [
     light: 3,
     water: 1,
     price: 16,
+    description: "this plant is nasty. You should buy it!!!",
   },
   {
     name: "pothos argenté",
@@ -23,6 +25,7 @@ export const plantList = [
     light: 1,
     water: 2,
     price: 17,
+    description: "this plant is nasty. You should buy it!!!",
   },
   {
     name: "yucca",
@@ -31,6 +34,7 @@ export const plantList = [
     light: 3,
     water: 1,
     price: 18,
+    description: "this plant is nasty. You should buy it!!!",
   },
   {
     name: "olivier",
@@ -39,6 +43,7 @@ export const plantList = [
     light: 3,
     water: 1,
     price: 15,
+    description: "this plant is nasty. You should buy it!!!",
   },
   {
     name: "géranium",
@@ -47,6 +52,7 @@ export const plantList = [
     light: 2,
     water: 2,
     price: 16,
+    description: "this plant is nasty. You should buy it!!!",
   },
   {
     name: "basilique",
@@ -56,6 +62,7 @@ export const plantList = [
     light: 2,
     water: 3,
     price: 17,
+    description: "this plant is nasty. You should buy it!!!",
   },
   {
     name: "aloe",
@@ -64,6 +71,7 @@ export const plantList = [
     light: 2,
     water: 1,
     price: 18,
+    description: "this plant is nasty. You should buy it!!!",
   },
   {
     name: "succulente",
@@ -72,5 +80,6 @@ export const plantList = [
     light: 2,
     water: 1,
     price: 15,
+    description: "this plant is nasty. You should buy it!!!",
   },
 ];

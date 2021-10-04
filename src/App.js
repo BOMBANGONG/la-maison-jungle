@@ -3,7 +3,8 @@ import Cart from "./components/Cart";
 import ShoppingList from "./components/ShoppingList";
 import Footer from "./components/Footer";
 import { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Description from "./components/Description";
 
 // import Card from "./components/Card";
 import "./App.css";
@@ -19,12 +20,12 @@ function App() {
           <div className="lmj-layout-inner">
             <div>
               <Switch>
+                <Route path="/list/:id">
+                  <Description />
+                </Route>
                 <Route path="/list">
                   <Cart cart={cart} setCart={setCart} />
                   <ShoppingList cart={cart} setCart={setCart} />
-                </Route>
-                <Route path="/list/:id">
-                  <Users />
                 </Route>
                 <Route path="/"></Route>
               </Switch>
@@ -35,18 +36,6 @@ function App() {
       </div>
     </div>
   );
-}
-
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
 }
 
 export default App;

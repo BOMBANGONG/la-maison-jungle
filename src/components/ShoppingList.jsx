@@ -1,4 +1,3 @@
-import Button from "@ied/ui-button";
 import { plantList } from "../datas/plantList";
 import "../styles/ShoppingList.css";
 import Card from "./Card";
