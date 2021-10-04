@@ -17,11 +17,10 @@ function App() {
         <Router>
           <Banner />
           <div className="lmj-layout-inner">
-            <Cart cart={cart} setCart={setCart} />
-
             <div>
               <Switch>
                 <Route path="/list">
+                  <Cart cart={cart} setCart={setCart} />
                   <ShoppingList cart={cart} setCart={setCart} />
                 </Route>
                 <Route path="/list/:id">
