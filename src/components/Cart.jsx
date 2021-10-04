@@ -3,7 +3,7 @@ import "../styles/Cart.css";
 import Button from "./Button";
 
 function Cart({ cart, setCart }) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const total = cart.reduce(
     (acc, plantType) => acc + plantType.amount * plantType.price,
