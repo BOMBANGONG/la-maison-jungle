@@ -13,7 +13,7 @@ function Cart({ cart, setCart }) {
   return isOpen ? (
     <div className="lmj-cart">
       <Button label={"close"} onClick={() => setIsOpen(false)} />
-      <h2>Panier</h2>
+      <h2>Cart</h2>
       {cart.map(({ name, price, amount }, index) => (
         <div key={`${name}-${index}`}>
           {name} {price} * {amount}

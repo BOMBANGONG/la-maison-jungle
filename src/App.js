@@ -17,15 +17,23 @@ function App() {
       <div className="App">
         <Router>
           <Banner />
-          <div className="lmj-layout-inner">
-            <div>
+          <div>
+            <div className="lmj-layout-inner">
               <Switch>
                 <Route path="/list/:id">
                   <Description />
                 </Route>
                 <Route path="/list">
-                  <Cart cart={cart} setCart={setCart} />
-                  <ShoppingList cart={cart} setCart={setCart} />
+                  <Cart
+                    cart={cart}
+                    setCart={setCart}
+                    className="lmj-bloc-cart"
+                  />
+                  <ShoppingList
+                    cart={cart}
+                    setCart={setCart}
+                    className="lmj-bloc-shop"
+                  />
                 </Route>
                 <Route path="/"></Route>
               </Switch>
