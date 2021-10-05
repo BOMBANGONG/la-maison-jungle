@@ -2,13 +2,36 @@
   font-size: 32px;
   font-weight: bold;
   color: black;
-  text-align: right;
   padding: 32px;
   border-bottom: solid 3px black;
   display: flex;
+}
+
+/* styling the navbar */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lmj-nav {
+  flex: 0 0 65%;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.link:hover {
+  color: green;
+}
+
+/* styling the title and the logo */
+.lmj-bnr-container {
+  display: flex;
   justify-content: flex-end;
-  flex-direction: row;
-  align-items: center;
+  flex: 1;
 }
 
 .lmj-title {
