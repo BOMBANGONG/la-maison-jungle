@@ -9,7 +9,7 @@ function Categories({ setActiveCategory, categories, activeCategory }) {
   return (
     <div className="lmj-categories">
       <Select
-        label="Choose category"
+        label="category"
         options={categories}
         value={activeCategory}
         onChange={handleChange}
@@ -20,5 +20,3 @@ function Categories({ setActiveCategory, categories, activeCategory }) {
 }
 
 export default Categories;
-
-// setSelectedCategory

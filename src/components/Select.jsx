@@ -5,6 +5,11 @@ const Select = (props) => {
   return (
     <div>
       <UiSelect
+        style={{
+          width: "160px",
+          marginLeft: "auto",
+          marginRight: "auto",
+        }}
         label={props.label}
         options={props.options}
         onChange={props.onChange}

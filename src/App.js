@@ -5,8 +5,6 @@ import Footer from "./components/Footer";
 import { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Description from "./components/Description";
-
-// import Card from "./components/Card";
 import "./App.css";
 
 function App() {
@@ -24,16 +22,8 @@ function App() {
                   <Description />
                 </Route>
                 <Route path="/list">
-                  <Cart
-                    cart={cart}
-                    setCart={setCart}
-                    className="lmj-bloc-cart"
-                  />
-                  <ShoppingList
-                    cart={cart}
-                    setCart={setCart}
-                    className="lmj-bloc-shop"
-                  />
+                  <Cart cart={cart} setCart={setCart} />
+                  <ShoppingList cart={cart} setCart={setCart} />
                 </Route>
                 <Route path="/"></Route>
               </Switch>
