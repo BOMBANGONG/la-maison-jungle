@@ -22,7 +22,6 @@ const Card = ({
     addToCart(name, price);
   }
 
-  console.log({ id, name, water, light, addToCart, price, description });
   return (
     <div onClick={goToDescription}>
       <UiCard skeleton ripple hover>
