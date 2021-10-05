@@ -14,7 +14,14 @@ function Categories({ setActiveCategory, categories, activeCategory }) {
         value={activeCategory}
         onChange={handleChange}
       />
-      <Button label={"Reset"} onClick={() => setActiveCategory("")} />
+      <Button
+        style={{
+          marginLeft: "auto",
+          marginRight: "auto",
+        }}
+        label={"Reset"}
+        onClick={() => setActiveCategory("")}
+      />
     </div>
   );
 }
