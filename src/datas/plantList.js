@@ -1,13 +1,23 @@
+import monstera from "../assets/img/monstera.jpeg";
+import lyrata from "../assets/img/lyrata.jpeg";
+import pothos from "../assets/img/pothos.jpeg";
+import succulent from "../assets/img/succulent.jpeg";
+import olivier from "../assets/img/olivier.jpeg";
+import basil from "../assets/img/basil.jpeg";
+import mint from "../assets/img/mint.jpeg";
+import calathea from "../assets/img/calathea.jpeg";
+import cactus from "../assets/img/cactus.jpeg";
+
 export const plantList = [
   {
     name: "monstera",
     category: "classique",
     id: "1ed",
-    isBestSale: true,
     light: 2,
     water: 3,
+    cover: monstera,
     price: 15,
-    description: "this plant is awesome. You should buy it!!!",
+    description: "jkhcljkschbskcbkbsjchsbvdhjs",
   },
   {
     name: "ficus lyrata",
@@ -15,26 +25,27 @@ export const plantList = [
     id: "2ab",
     light: 3,
     water: 1,
+    cover: lyrata,
     price: 16,
-    description: "this plant is nasty. You should buy it!!!",
   },
+
   {
     name: "pothos argenté",
     category: "classique",
     id: "3sd",
     light: 1,
     water: 2,
-    price: 17,
-    description: "this plant is nasty. You should buy it!!!",
+    cover: pothos,
+    price: 9,
   },
   {
-    name: "yucca",
+    name: "calathea",
     category: "classique",
     id: "4kk",
-    light: 3,
-    water: 1,
-    price: 18,
-    description: "this plant is nasty. You should buy it!!!",
+    light: 2,
+    water: 3,
+    cover: calathea,
+    price: 20,
   },
   {
     name: "olivier",
@@ -42,36 +53,27 @@ export const plantList = [
     id: "5pl",
     light: 3,
     water: 1,
-    price: 15,
-    description: "this plant is nasty. You should buy it!!!",
+    cover: olivier,
+    price: 25,
   },
+
   {
-    name: "géranium",
-    category: "extérieur",
-    id: "6uo",
+    name: "cactus",
+    category: "plante grasse",
+    id: "8fp",
     light: 2,
-    water: 2,
-    price: 16,
-    description: "this plant is nasty. You should buy it!!!",
+    water: 1,
+    cover: cactus,
+    price: 6,
   },
   {
     name: "basilique",
     category: "extérieur",
     id: "7ie",
-    isBestSale: true,
     light: 2,
     water: 3,
-    price: 17,
-    description: "this plant is nasty. You should buy it!!!",
-  },
-  {
-    name: "aloe",
-    category: "plante grasse",
-    id: "8fp",
-    light: 2,
-    water: 1,
-    price: 18,
-    description: "this plant is nasty. You should buy it!!!",
+    cover: basil,
+    price: 5,
   },
   {
     name: "succulente",
@@ -79,7 +81,17 @@ export const plantList = [
     id: "9vn",
     light: 2,
     water: 1,
-    price: 15,
-    description: "this plant is nasty. You should buy it!!!",
+    cover: succulent,
+    price: 8,
+  },
+
+  {
+    name: "menthe",
+    category: "extérieur",
+    id: "6uo",
+    light: 2,
+    water: 2,
+    cover: mint,
+    price: 4,
   },
 ];

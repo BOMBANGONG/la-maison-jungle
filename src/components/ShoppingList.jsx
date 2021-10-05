@@ -36,12 +36,13 @@ function ShoppingList({ cart, setCart }) {
         activeCategory={activeCategory}
       />
       <ul className="lmj-plant-list">
-        {plantList.map(({ id, name, water, light, price, category }) =>
+        {plantList.map(({ id, name, cover, water, light, price, category }) =>
           !activeCategory || activeCategory === category ? (
             <div key={id}>
               <Card
                 id={id}
                 name={name}
+                cover={cover}
                 water={water}
                 light={light}
                 price={price}

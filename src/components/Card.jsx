@@ -3,10 +3,12 @@ import UiButton from "@ied/ui-button";
 import UiCard from "@ied/ui-card";
 import CareScale from "./CareScale";
 import { useHistory } from "react-router-dom";
+import "../styles/Card.css";
 
 const Card = ({
   id,
   name,
+  cover,
   water,
   light,
   addToCart,
@@ -25,7 +27,11 @@ const Card = ({
   return (
     <div onClick={goToDescription}>
       <UiCard skeleton ripple hover>
-        <UiCard.Media src="http://t3.gstatic.com/images?q=tbn:ANd9GcT40xnh3l_cEal2CUsv3Jl-zBGIQUSSLm3aecH7Px24cR24dBuBKJ9IrYJMk5CP-LWkMgpCbk3Pu4GzUN5UfLs" />
+        <img
+          className="lmj-plant-item-cover"
+          src={cover}
+          alt={`${name} cover`}
+        />
         <UiCard.Title>{name}</UiCard.Title>
         <UiCard.Text>{description}</UiCard.Text>
         <UiCard.Actions>
