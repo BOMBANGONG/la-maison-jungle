@@ -18,6 +18,7 @@ const Description = ({ handleAddToCart }) => {
       key={id}
       id={plantData.id}
       name={plantData.name}
+      cover={plantData.cover}
       water={plantData.water}
       light={plantData.light}
       addToCart={handleAddToCart}
