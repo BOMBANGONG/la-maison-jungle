@@ -36,9 +36,28 @@ ul {
 
 .lmj-title {
   padding-left: 32px;
+  font-size: 30px;
 }
 
 .lmj-logo {
   height: 45px;
   width: 45px;
+}
+
+@media screen and (max-width: 965px) {
+  .lmj-title {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 845px) {
+  .lmj-logo {
+    padding-top: 20px;
+  }
+}
+
+@media screen and (max-width: 613px) {
+  .lmj-logo {
+    padding-top: 30px;
+  }
 }
