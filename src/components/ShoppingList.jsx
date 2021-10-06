@@ -35,24 +35,24 @@ function ShoppingList({ cart, setCart }) {
         setActiveCategory={setActiveCategory}
         activeCategory={activeCategory}
       />
-      <ul className="lmj-plant-list">
+      <div className="lmj-plant-container">
         {plantList.map(({ id, name, cover, water, light, price, category }) =>
           !activeCategory || activeCategory === category ? (
-            <div key={id}>
-              <Card
-                id={id}
-                name={name}
-                cover={cover}
-                water={water}
-                light={light}
-                price={price}
-                cart={cart}
-                addToCart={addToCart}
-              />
-            </div>
+            <Card
+              className="lmj-plant-card"
+              key={id}
+              id={id}
+              name={name}
+              cover={cover}
+              water={water}
+              light={light}
+              price={price}
+              cart={cart}
+              addToCart={addToCart}
+            />
           ) : null
         )}
-      </ul>
+      </div>
     </div>
   );
 }

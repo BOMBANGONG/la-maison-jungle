@@ -1,4 +1,9 @@
-.lmj-layout-inner {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* .lmj-layout-inner {
   display: flex;
   flex-direction: row;
-}
+} */

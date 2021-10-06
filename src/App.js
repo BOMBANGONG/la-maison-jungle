@@ -11,27 +11,23 @@ function App() {
   const [cart, setCart] = useState([]);
 
   return (
-    <div>
-      <div className="App">
-        <Router>
-          <Banner />
-          <div>
-            <div className="lmj-layout-inner">
-              <Switch>
-                <Route path="/list/:id">
-                  <Description />
-                </Route>
-                <Route path="/list">
-                  <Cart cart={cart} setCart={setCart} />
-                  <ShoppingList cart={cart} setCart={setCart} />
-                </Route>
-                <Route path="/"></Route>
-              </Switch>
-            </div>
-          </div>
-        </Router>
-        <Footer />
-      </div>
+    <div className="App">
+      <Router>
+        <Banner />
+        <div className="lmj-layout-inner">
+          <Switch>
+            <Route path="/list/:id">
+              <Description />
+            </Route>
+            <Route path="/list">
+              <Cart cart={cart} setCart={setCart} />
+              <ShoppingList cart={cart} setCart={setCart} />
+            </Route>
+            <Route path="/"></Route>
+          </Switch>
+        </div>
+      </Router>
+      <Footer />
     </div>
   );
 }

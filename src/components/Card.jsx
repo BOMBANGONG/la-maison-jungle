@@ -14,6 +14,7 @@ const Card = ({
   addToCart,
   price,
   description = "",
+  className,
 }) => {
   const history = useHistory();
   function goToDescription() {
@@ -25,24 +26,18 @@ const Card = ({
   }
 
   return (
-    <div onClick={goToDescription}>
-      <UiCard skeleton ripple hover>
-        <img
-          className="lmj-plant-item-cover"
-          src={cover}
-          alt={`${name} cover`}
-        />
-        <UiCard.Title>{name}</UiCard.Title>
-        <UiCard.Text>{description}</UiCard.Text>
-        <UiCard.Actions>
-          <CareScale careType="water" scaleValue={water} />
-          <CareScale careType="light" scaleValue={light} />
-          <UiButton primary onClick={handleAddToCart}>
-            Add
-          </UiButton>
-        </UiCard.Actions>
-      </UiCard>
-    </div>
+    <UiCard skeleton ripple hover onClick={goToDescription} {...{ className }}>
+      <img className="lmj-plant-item-cover" src={cover} alt={`${name} cover`} />
+      <UiCard.Title>{name}</UiCard.Title>
+      <UiCard.Text>{description}</UiCard.Text>
+      <UiCard.Actions>
+        <CareScale careType="water" scaleValue={water} />
+        <CareScale careType="light" scaleValue={light} />
+        <UiButton primary onClick={handleAddToCart}>
+          Add
+        </UiButton>
+      </UiCard.Actions>
+    </UiCard>
   );
 };
 
