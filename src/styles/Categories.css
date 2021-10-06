@@ -1,3 +1,5 @@
 .lmj-categories {
   padding-top: 30px;
+  display: inline-flex;
+  margin-bottom: 10px;
 }

@@ -16,7 +16,7 @@ function Categories({ setActiveCategory, categories, activeCategory }) {
       />
       <Button
         style={{
-          paddingLeft: "10px",
+          marginLeft: "20px",
         }}
         label={"Reset"}
         onClick={() => setActiveCategory("")}
