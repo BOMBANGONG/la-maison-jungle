@@ -1,13 +1,3 @@
-import monstera from "../assets/img/monstera.jpeg";
-import lyrata from "../assets/img/lyrata.jpeg";
-import pothos from "../assets/img/pothos.jpeg";
-import succulent from "../assets/img/succulent.jpeg";
-import olivier from "../assets/img/olivier.jpeg";
-import basil from "../assets/img/basil.jpeg";
-import mint from "../assets/img/mint.jpeg";
-import calathea from "../assets/img/calathea.jpeg";
-import cactus from "../assets/img/cactus.jpeg";
-
 export const plantList = [
   {
     name: "monstera",
@@ -15,7 +5,7 @@ export const plantList = [
     id: "1ed",
     light: 2,
     water: 3,
-    cover: monstera,
+    cover: "/img/monstera.jpeg",
     price: 15,
     description: "jkhcljkschbskcbkbsjchsbvdhjs",
   },
@@ -25,7 +15,7 @@ export const plantList = [
     id: "2ab",
     light: 3,
     water: 1,
-    cover: lyrata,
+    cover: "/img/lyrata.jpeg",
     price: 16,
   },
 
@@ -35,7 +25,7 @@ export const plantList = [
     id: "3sd",
     light: 1,
     water: 2,
-    cover: pothos,
+    cover: "/img/pothos.jpeg",
     price: 9,
   },
   {
@@ -44,7 +34,7 @@ export const plantList = [
     id: "4kk",
     light: 2,
     water: 3,
-    cover: calathea,
+    cover: "/img/calathea.jpeg",
     price: 20,
   },
   {
@@ -53,7 +43,7 @@ export const plantList = [
     id: "5pl",
     light: 3,
     water: 1,
-    cover: olivier,
+    cover: "/img/olivier.jpeg",
     price: 25,
   },
 
@@ -63,7 +53,7 @@ export const plantList = [
     id: "8fp",
     light: 2,
     water: 1,
-    cover: cactus,
+    cover: "/img/cactus.jpeg",
     price: 6,
   },
   {
@@ -72,7 +62,7 @@ export const plantList = [
     id: "7ie",
     light: 2,
     water: 3,
-    cover: basil,
+    cover: "/img/basil.jpeg",
     price: 5,
   },
   {
@@ -81,7 +71,7 @@ export const plantList = [
     id: "9vn",
     light: 2,
     water: 1,
-    cover: succulent,
+    cover: "/img/succulent.jpeg",
     price: 8,
   },
 
@@ -91,7 +81,7 @@ export const plantList = [
     id: "6uo",
     light: 2,
     water: 2,
-    cover: mint,
+    cover: "/img/monstera.jpeg",
     price: 4,
   },
 ];
