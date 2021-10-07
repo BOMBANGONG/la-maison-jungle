@@ -1,7 +1,5 @@
 .lmj-categories {
-  padding-top: 30px;
-  display: inline-flex;
-  margin-bottom: 10px;
-  width: 25%;
-  margin-left: 40%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
 }

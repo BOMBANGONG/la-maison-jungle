@@ -7,7 +7,6 @@ const Select = (props) => {
       <UiSelect
         style={{
           width: "160px",
-          paddingLeft: "20px",
         }}
         label={props.label}
         options={props.options}

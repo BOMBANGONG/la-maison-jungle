@@ -13,7 +13,6 @@ const Description = ({ handleAddToCart }) => {
     return null;
   }
 
-  console.log(plantData);
   return (
     <div className="description">
       <Card
