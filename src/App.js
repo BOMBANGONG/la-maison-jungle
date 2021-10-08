@@ -17,6 +17,7 @@ function App() {
         <div className="lmj-layout-inner">
           <Switch>
             <Route path="/list/:id">
+              <Cart cart={basket} setCart={setBasket} />
               <Description cart={basket} setCart={setBasket} />
             </Route>
             <Route path="/list">
