@@ -4,7 +4,7 @@ import { useParams, useHistory } from "react-router-dom";
 import { plantList } from "../datas/plantList";
 import Button from "./Button";
 
-const Description = ({ cart, setCart }) => {
+const Description = ({ setCart }) => {
   const history = useHistory();
   const { id } = useParams();
   const plantData = plantList.find((e) => e.id === id);
@@ -14,21 +14,37 @@ const Description = ({ cart, setCart }) => {
   }
 
   function addToCart(name, price) {
-    const currentPlantAdded = cart.find(
-      (plant) => plant.name === plantData.name
-    );
+    // const currentPlantAdded = cart.find(
+    //   (plant) => plant.name === plantData.name
+    // );
 
-    if (currentPlantAdded) {
-      const cartFilteredCurrentPlant = cart.filter(
-        (plant) => plant.name !== plantData.name
+    // if (currentPlantAdded) {
+    //   const cartFilteredCurrentPlant = cart.filter(
+    //     (plant) => plant.name !== plantData.name
+    //   );
+    //   setCart([
+    //     ...cartFilteredCurrentPlant,
+    //     { name, price, amount: currentPlantAdded.amount + 1 },
+    //   ]);
+    // } else {
+    //   setCart([...cart, { name, price, amount: 1 }]);
+    // }
+    setCart((cart) => {
+      const currentPlantAdded = cart.find(
+        (plant) => plant.name === plantData.name
       );
-      setCart([
-        ...cartFilteredCurrentPlant,
-        { name, price, amount: currentPlantAdded.amount + 1 },
-      ]);
-    } else {
-      setCart([...cart, { name, price, amount: 1 }]);
-    }
+      if (currentPlantAdded) {
+        const cartFilteredCurrentPlant = cart.filter(
+          (plant) => plant.name !== plantData.name
+        );
+        return [
+          ...cartFilteredCurrentPlant,
+          { name, price, amount: currentPlantAdded.amount + 1 },
+        ];
+      } else {
+        return [...cart, { name, price, amount: 1 }];
+      }
+    });
   }
 
   return (
