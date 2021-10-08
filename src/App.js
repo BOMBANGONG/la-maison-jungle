@@ -8,7 +8,7 @@ import Description from "./components/Description";
 import "./App.css";
 
 function App() {
-  const [cart, setCart] = useState([]);
+  const [basket, setBasket] = useState([]);
 
   return (
     <div className="App">
@@ -17,11 +17,11 @@ function App() {
         <div className="lmj-layout-inner">
           <Switch>
             <Route path="/list/:id">
-              <Description />
+              <Description cart={basket} setCart={setBasket} />
             </Route>
             <Route path="/list">
-              <Cart cart={cart} setCart={setCart} />
-              <ShoppingList cart={cart} setCart={setCart} />
+              <Cart cart={basket} setCart={setBasket} />
+              <ShoppingList cart={basket} setCart={setBasket} />
             </Route>
             <Route path="/"></Route>
           </Switch>
