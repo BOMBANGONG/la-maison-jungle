@@ -9,26 +9,11 @@ const Description = ({ setCart }) => {
   const { id } = useParams();
   const plantData = plantList.find((e) => e.id === id);
   if (!plantData) {
-    history.push("/list");
+    history.push("/shop");
     return null;
   }
 
   function addToCart(name, price) {
-    // const currentPlantAdded = cart.find(
-    //   (plant) => plant.name === plantData.name
-    // );
-
-    // if (currentPlantAdded) {
-    //   const cartFilteredCurrentPlant = cart.filter(
-    //     (plant) => plant.name !== plantData.name
-    //   );
-    //   setCart([
-    //     ...cartFilteredCurrentPlant,
-    //     { name, price, amount: currentPlantAdded.amount + 1 },
-    //   ]);
-    // } else {
-    //   setCart([...cart, { name, price, amount: 1 }]);
-    // }
     setCart((cart) => {
       const currentPlantAdded = cart.find(
         (plant) => plant.name === plantData.name
@@ -60,7 +45,7 @@ const Description = ({ setCart }) => {
         price={plantData.price}
         description={plantData.description}
       />
-      <Button label={"Back"} onClick={() => history.push("/list")} />
+      <Button label={"Back"} onClick={() => history.push("/shop")} />
     </div>
   );
 };

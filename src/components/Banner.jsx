@@ -14,7 +14,7 @@ const Banner = () => {
           </Link>
         </li>
         <li>
-          <Link to="/list" className="link">
+          <Link to="/shop" className="link">
             Shop
           </Link>
         </li>

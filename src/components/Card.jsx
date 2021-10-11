@@ -4,21 +4,24 @@ import UiCard from "@ied/ui-card";
 import CareScale from "./CareScale";
 import { useHistory } from "react-router-dom";
 import "../styles/Card.css";
+import { useRouteMatch } from "react-router-dom";
 
-const Card = ({
-  id,
-  name,
-  cover,
-  water,
-  light,
-  addToCart,
-  price,
-  description = "",
-  className,
-}) => {
+const Card = (props) => {
+  const {
+    id,
+    name,
+    cover,
+    water,
+    light,
+    addToCart,
+    price,
+    description = "",
+    className,
+  } = props;
+  const { url } = useRouteMatch();
   const history = useHistory();
   function goToDescription() {
-    history.push(`/list/${id}`);
+    history.push(`${url}/${id}`);
   }
   function handleAddToCart(e) {
     e.stopPropagation();

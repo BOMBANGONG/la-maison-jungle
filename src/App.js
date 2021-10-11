@@ -1,29 +1,20 @@
 import Banner from "./components/Banner";
-import Cart from "./components/Cart";
-import ShoppingList from "./components/ShoppingList";
 import Footer from "./components/Footer";
-import { useState } from "react";
+import Shop from "./components/Shop";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Description from "./components/Description";
 import "./App.css";
 
 function App() {
-  const [basket, setBasket] = useState([]);
-
   return (
     <div className="App">
       <Router>
         <Banner />
         <div className="lmj-layout-inner">
-          <Cart cart={basket} setCart={setBasket} />
           <Switch>
-            <Route path="/list/:id">
-              <Description cart={basket} setCart={setBasket} />
+            <Route path="/shop">
+              <Shop />
             </Route>
-            <Route path="/list">
-              <ShoppingList cart={basket} setCart={setBasket} />
-            </Route>
-            <Route path="/"></Route>
+            <Route path="/" />
           </Switch>
         </div>
       </Router>
