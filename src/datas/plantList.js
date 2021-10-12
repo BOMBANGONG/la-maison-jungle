@@ -98,6 +98,7 @@ export const plantList = [
     water: 2,
     cover: "/img/monstera.jpeg",
     price: 4,
-    description: "",
+    description:
+      "Nam blandit diam sit amet nisl imperdiet sodales. Maecenas venenatis sem nec tortor porttitor mollis. ",
   },
 ];
