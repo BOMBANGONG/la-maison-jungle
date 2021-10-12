@@ -34,9 +34,12 @@ const Card = (props) => {
       <UiCard.Title>{name}</UiCard.Title>
       <UiCard.Subtitle>{price}€</UiCard.Subtitle>
       <UiCard.Text>{description}</UiCard.Text>
-      <UiCard.Actions>
+      <div className="lmj-caretypes">
         <CareScale careType="water" scaleValue={water} />
         <CareScale careType="light" scaleValue={light} />
+      </div>
+
+      <UiCard.Actions>
         <UiButton primary onClick={handleAddToCart}>
           Add
         </UiButton>
