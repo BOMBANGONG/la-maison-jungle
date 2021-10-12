@@ -8,7 +8,6 @@ import { Route, useRouteMatch, Switch } from "react-router-dom";
 const Shop = () => {
   const [cart, setCart] = useState([]);
   const { path } = useRouteMatch();
-  console.log(path);
   return (
     <div>
       <Cart cart={cart} setCart={setCart} />
