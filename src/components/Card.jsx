@@ -32,6 +32,7 @@ const Card = (props) => {
     <UiCard skeleton ripple hover onClick={goToDescription} {...{ className }}>
       <img className="lmj-plant-item-cover" src={cover} alt={`${name} cover`} />
       <UiCard.Title>{name}</UiCard.Title>
+      <UiCard.Subtitle>{price}€</UiCard.Subtitle>
       <UiCard.Text>{description}</UiCard.Text>
       <UiCard.Actions>
         <CareScale careType="water" scaleValue={water} />

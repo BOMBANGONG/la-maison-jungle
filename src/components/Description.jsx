@@ -33,7 +33,7 @@ const Description = ({ setCart }) => {
   }
 
   return (
-    <div className="description">
+    <div>
       <Card
         key={id}
         id={plantData.id}
