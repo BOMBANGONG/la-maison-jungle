@@ -60,7 +60,7 @@ const Description = ({ setCart }) => {
           <h2>{name}</h2>
           <p>{description}</p>
           <p>{price}€</p>
-          <Button primary label={"Add"} onClick={() => addToCart} />
+          <Button primary label={"Add"} onClick={() => addToCart()} />
         </div>
       </div>
 
