@@ -14,12 +14,9 @@ const Description = ({ setCart }) => {
     return null;
   }
 
-  const cover = plantData.cover;
-  const name = plantData.name;
-  const price = plantData.price;
-  const description = plantData.description;
+  const { cover, name, price, description } = plantData;
 
-  function addToCart(name, price) {
+  const addToCart = (event) => {
     setCart((cart) => {
       const currentPlantAdded = cart.find(
         (plant) => plant.name === plantData.name
@@ -36,21 +33,10 @@ const Description = ({ setCart }) => {
         return [...cart, { name, price, amount: 1 }];
       }
     });
-  }
+  };
 
   return (
     <div>
-      {/* <Card
-        key={id}
-        id={plantData.id}
-        name={plantData.name}
-        cover={plantData.cover}
-        water={plantData.water}
-        light={plantData.light}
-        addToCart={addToCart}
-        price={plantData.price}
-        description={plantData.description}
-      /> */}
       <div className="container">
         <div className="img-src">
           <img src={cover} alt={`${name} cover`} />
@@ -60,11 +46,10 @@ const Description = ({ setCart }) => {
           <h2>{name}</h2>
           <p>{description}</p>
           <p>{price}€</p>
-          <Button primary label={"Add"} onClick={() => addToCart()} />
+          <Button primary label={"Add"} onClick={addToCart} />
+          <Button label={"Back"} onClick={() => history.push("/shop")} />
         </div>
       </div>
-
-      <Button label={"Back"} onClick={() => history.push("/shop")} />
     </div>
   );
 };

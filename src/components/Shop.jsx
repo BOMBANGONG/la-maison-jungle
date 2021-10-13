@@ -13,7 +13,7 @@ const Shop = () => {
       <Cart cart={cart} setCart={setCart} />
       <Switch>
         <Route path={`${path}/:id`}>
-          <Description cart={cart} setCart={setCart} />
+          <Description setCart={setCart} />
         </Route>
         <Route path={`${path}`}>
           <ShoppingList cart={cart} setCart={setCart} />
