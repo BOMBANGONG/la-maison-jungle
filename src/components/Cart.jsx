@@ -11,8 +11,11 @@ function Cart(props) {
     0
   );
 
+  // cart remains open when cart not empty
   useEffect(() => {
-    document.title = `LMJ: ${total}€ d'achats`;
+    if (total !== "undefined" && total) {
+      setIsOpen(true);
+    }
   }, [total]);
 
   return isOpen ? (
