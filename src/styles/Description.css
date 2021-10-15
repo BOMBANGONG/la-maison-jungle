@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.img-src img {
+  width: 500px;
+  height: auto;
+}
+
+.text-src h2,
+p,
+button {
+  margin: 8px;
+}
+
+.text-src h2 {
+  font-size: 50px;
+}

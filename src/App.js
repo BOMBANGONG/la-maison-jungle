@@ -15,11 +15,10 @@ function App() {
             <Route path="/shop">
               <Shop />
             </Route>
-            <Route path="/" />
+            <Home path="/" />
           </Switch>
         </div>
       </Router>
-      <Home />
       <Footer />
     </div>
   );
