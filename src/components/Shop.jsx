@@ -5,10 +5,19 @@ import Cart from "./Cart";
 import { useState, useEffect } from "react";
 import { Route, useRouteMatch, Switch } from "react-router-dom";
 
+const getInitCart = () => {
+  try {
+    const cart = localStorage.getItem("cart");
+    return cart ? JSON.parse(cart) : [];
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+};
+
 const Shop = () => {
   // save cart items after refreshing page
-  const savedCart = localStorage.getItem("cart");
-  const [cart, updateCart] = useState(savedCart ? JSON.parse(savedCart) : []);
+  const [cart, updateCart] = useState(getInitCart);
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);

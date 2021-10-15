@@ -11,11 +11,12 @@ function Cart(props) {
     0
   );
 
-  // cart remains open when cart not empty
+  // cart remains open when is not empty
   useEffect(() => {
-    if (total !== "undefined" && total) {
+    if (total && !isOpen) {
       setIsOpen(true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [total]);
 
   return isOpen ? (
