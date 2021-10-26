@@ -2,9 +2,10 @@ import React from "react";
 import "../styles/Home.css";
 
 const Home = () => {
+  const imageFilePath = "../img/monstera.jpeg";
   return (
-    <div>
-      <h1 className="title">Welcome to the plant shop</h1>
+    <div style={{ backgroundImage: `url("file:${imageFilePath}")` }}>
+      <p>Feel free to buy anything</p>
     </div>
   );
 };
