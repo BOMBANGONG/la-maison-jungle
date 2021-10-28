@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import UiButton from "@ied/ui-button";
 import UiCard from "@ied/ui-card";
 import CareScale from "./CareScale";
@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import "../styles/Card.css";
 import { useRouteMatch } from "react-router-dom";
 import { string, number, func } from "prop-types";
+import { CartContext } from "../context/CartContext";
 
 const Card = (props) => {
   const {
@@ -14,19 +15,22 @@ const Card = (props) => {
     cover,
     water,
     light,
-    addToCart,
     price,
     description = "",
     className,
   } = props;
+
+  const { updateCart } = useContext(CartContext);
+
   const { url } = useRouteMatch();
   const history = useHistory();
+
   function goToDescription() {
     history.push(`${url}/${id}`);
   }
   function handleAddToCart(e) {
     e.stopPropagation();
-    addToCart(name, price);
+    updateCart(name, price);
   }
 
   return (

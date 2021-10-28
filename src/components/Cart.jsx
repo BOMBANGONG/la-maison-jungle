@@ -1,9 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import "../styles/Cart.css";
 import Button from "./Button";
+import { CartContext } from "../context/CartContext";
 
 function Cart(props) {
-  const { cart, setCart } = props;
+  const { cart, emptyCart } = useContext(CartContext);
+
   const [isOpen, setIsOpen] = useState(false);
 
   const total = cart.reduce(
@@ -30,7 +32,7 @@ function Cart(props) {
       ))}
 
       <h3>Total:{total}€</h3>
-      <Button label={"Empty Cart"} onClick={() => setCart([])} />
+      <Button label={"Empty Cart"} onClick={() => emptyCart()} />
     </div>
   ) : (
     <div className="lmj-cart-closed">
