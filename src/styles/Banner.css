@@ -1,7 +1,6 @@
 .lmj-banner {
   font-size: 32px;
   font-weight: bold;
-  color: black;
   padding: 20px;
   border-bottom: solid 3px black;
   display: flex;
@@ -20,7 +19,7 @@ ul {
 
 .link {
   text-decoration: none;
-  color: black;
+  color: var(--color);
 }
 
 .link:hover {

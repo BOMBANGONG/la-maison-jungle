@@ -3,6 +3,7 @@ import "../styles/ShoppingList.css";
 import Card from "./Card";
 import Categories from "./Categories";
 import { useState } from "react";
+import { array } from "prop-types";
 
 function ShoppingList({ cart, setCart }) {
   const [activeCategory, setActiveCategory] = useState("");
@@ -56,5 +57,10 @@ function ShoppingList({ cart, setCart }) {
     </div>
   );
 }
+
+ShoppingList.propTypes = {
+  cart: array,
+  setCart: array,
+};
 
 export default ShoppingList;

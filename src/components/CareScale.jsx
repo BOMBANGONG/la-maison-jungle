@@ -1,5 +1,6 @@
 import Sun from "../assets/sun.svg";
 import Water from "../assets/water.svg";
+import { string, number } from "prop-types";
 
 function CareScale({ scaleValue, careType }) {
   const range = [1, 2, 3];
@@ -20,5 +21,10 @@ function CareScale({ scaleValue, careType }) {
     </div>
   );
 }
+
+CareScale.propTypes = {
+  scaleValue: number,
+  careType: string,
+};
 
 export default CareScale;

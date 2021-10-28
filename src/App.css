@@ -2,3 +2,18 @@
   margin: 0;
   padding: 0;
 }
+
+.dark {
+  --color: white;
+  --bg-color: rgb(4, 93, 56);
+}
+
+.light {
+  --color: black;
+  --bg-color: white;
+}
+
+.main-container {
+  color: var(--color);
+  background-color: var(--bg-color);
+}

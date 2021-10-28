@@ -1,9 +1,8 @@
-// import Card from "./Card";
-import React from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { plantList } from "../datas/plantList";
 import Button from "./Button";
 import "../styles/Description.css";
+import { func } from "prop-types";
 
 const Description = ({ setCart }) => {
   const history = useHistory();
@@ -52,6 +51,10 @@ const Description = ({ setCart }) => {
       </div>
     </div>
   );
+};
+
+Description.propTypes = {
+  setCart: func,
 };
 
 export default Description;

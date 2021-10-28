@@ -1,5 +1,6 @@
 import CareScale from "./CareScale";
 import "../styles/PlantItem.css";
+import { string } from "prop-types";
 
 function handleClick(plantName) {
   alert(`Vous voulez acheter 1 ${plantName}? Très bon choix 🌱✨`);
@@ -16,5 +17,9 @@ function PlantItem({ name, water, light }) {
     </li>
   );
 }
+
+handleClick.propTypes = {
+  plantName: string,
+};
 
 export default PlantItem;
