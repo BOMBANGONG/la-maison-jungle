@@ -3,8 +3,12 @@ import { plantList } from "../datas/plantList";
 import Button from "./Button";
 import "../styles/Description.css";
 import { func } from "prop-types";
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 
-const Description = ({ setCart }) => {
+const Description = () => {
+  const { cart } = useContext(CartContext);
+
   const history = useHistory();
   const { id } = useParams();
   const plantData = plantList.find((e) => e.id === id);
@@ -15,23 +19,40 @@ const Description = ({ setCart }) => {
 
   const { cover, name, price, description } = plantData;
 
-  const addToCart = (event) => {
-    setCart((cart) => {
-      const currentPlantAdded = cart.find(
-        (plant) => plant.name === plantData.name
+  // const addToCart = (event) => {
+  //   setCart((cart) => {
+  //     const currentPlantAdded = cart.find(
+  //       (plant) => plant.name === plantData.name
+  //     );
+  //     if (currentPlantAdded) {
+  //       const cartFilteredCurrentPlant = cart.filter(
+  //         (plant) => plant.name !== plantData.name
+  //       );
+  //       return [
+  //         ...cartFilteredCurrentPlant,
+  //         { name, price, amount: currentPlantAdded.amount + 1 },
+  //       ];
+  //     } else {
+  //       return [...cart, { name, price, amount: 1 }];
+  //     }
+  //   });
+  // };
+
+  const setCart = () => {
+    const currentPlantAdded = cart.find(
+      (plant) => plant.name === plantData.name
+    );
+    if (currentPlantAdded) {
+      const cartFilteredCurrentPlant = cart.filter(
+        (plant) => plant.name !== plantData.name
       );
-      if (currentPlantAdded) {
-        const cartFilteredCurrentPlant = cart.filter(
-          (plant) => plant.name !== plantData.name
-        );
-        return [
-          ...cartFilteredCurrentPlant,
-          { name, price, amount: currentPlantAdded.amount + 1 },
-        ];
-      } else {
-        return [...cart, { name, price, amount: 1 }];
-      }
-    });
+      return [
+        ...cartFilteredCurrentPlant,
+        { name, price, amount: currentPlantAdded.amount + 1 },
+      ];
+    } else {
+      return [...cart, { name, price, amount: 1 }];
+    }
   };
 
   return (
@@ -45,7 +66,7 @@ const Description = ({ setCart }) => {
           <h2>{name}</h2>
           <p>{description}</p>
           <p>{price}€</p>
-          <Button primary label={"Add"} onClick={addToCart} />
+          <Button primary label={"Add"} onClick={setCart} />
           <Button label={"Back"} onClick={() => history.push("/shop")} />
         </div>
       </div>

@@ -31,6 +31,7 @@ export const CartProvider = ({ children }) => {
     }
   }
 
+  // set cart to empty cart
   function emptyCart() {
     setCart([]);
   }

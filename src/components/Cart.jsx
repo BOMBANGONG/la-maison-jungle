@@ -3,7 +3,7 @@ import "../styles/Cart.css";
 import Button from "./Button";
 import { CartContext } from "../context/CartContext";
 
-function Cart(props) {
+function Cart() {
   const { cart, emptyCart } = useContext(CartContext);
 
   const [isOpen, setIsOpen] = useState(false);
