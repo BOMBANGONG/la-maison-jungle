@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 
 const Description = () => {
-  const { cart } = useContext(CartContext);
+  const { updateCart } = useContext(CartContext);
 
   const history = useHistory();
   const { id } = useParams();
@@ -18,42 +18,6 @@ const Description = () => {
   }
 
   const { cover, name, price, description } = plantData;
-
-  // const addToCart = (event) => {
-  //   setCart((cart) => {
-  //     const currentPlantAdded = cart.find(
-  //       (plant) => plant.name === plantData.name
-  //     );
-  //     if (currentPlantAdded) {
-  //       const cartFilteredCurrentPlant = cart.filter(
-  //         (plant) => plant.name !== plantData.name
-  //       );
-  //       return [
-  //         ...cartFilteredCurrentPlant,
-  //         { name, price, amount: currentPlantAdded.amount + 1 },
-  //       ];
-  //     } else {
-  //       return [...cart, { name, price, amount: 1 }];
-  //     }
-  //   });
-  // };
-
-  const setCart = () => {
-    const currentPlantAdded = cart.find(
-      (plant) => plant.name === plantData.name
-    );
-    if (currentPlantAdded) {
-      const cartFilteredCurrentPlant = cart.filter(
-        (plant) => plant.name !== plantData.name
-      );
-      return [
-        ...cartFilteredCurrentPlant,
-        { name, price, amount: currentPlantAdded.amount + 1 },
-      ];
-    } else {
-      return [...cart, { name, price, amount: 1 }];
-    }
-  };
 
   return (
     <div>
@@ -66,7 +30,11 @@ const Description = () => {
           <h2>{name}</h2>
           <p>{description}</p>
           <p>{price}€</p>
-          <Button primary label={"Add"} onClick={setCart} />
+          <Button
+            primary
+            label={"Add"}
+            onClick={() => updateCart(name, price)}
+          />
           <Button label={"Back"} onClick={() => history.push("/shop")} />
         </div>
       </div>
