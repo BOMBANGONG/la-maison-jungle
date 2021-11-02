@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ied/mui-helpers": "^1.0.0",
     "@ied/ui-avatar": "^1.2.0",
     "@ied/ui-button": "^1.3.5",
     "@ied/ui-card": "^2.0.14",
@@ -18,6 +19,7 @@
     "@ied/ui-skeleton": "^1.1.1",
     "@ied/ui-surface": "^1.0.41",
     "@ied/ui-textfield": "^1.3.5",
+    "@ied/ui-theme-fulll": "^1.0.4",
     "@ied/ui-tooltip": "^2.0.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",

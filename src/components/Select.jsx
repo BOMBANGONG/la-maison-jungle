@@ -1,4 +1,3 @@
-// import React, { useState } from "react";
 import { Select as UiSelect } from "@ied/ui-select";
 
 const Select = (props) => {

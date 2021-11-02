@@ -1285,6 +1285,13 @@
   resolved "https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-1.2.0.tgz#87de7af9c231826fdd68ac7258f77c429e0e5fcf"
   integrity sha512-wdppn25U8z/2yiaT6YGquE6X8sSv7hNMWSXYSSU1jGv/yd6XqjXgTDJ8KP4NgjTXfJ3GbRjeeb8RTV7a/VpM+w==
 
+"@ied/mui-helpers@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@ied/mui-helpers/-/mui-helpers-1.0.0.tgz#e5bac384a5a8ad1863e25afd926c494f2ea262fa"
+  integrity sha512-aLdQF2vZ8k57Ku9cuP+UAA68lg3Wd9teEYKBNUOaI1nUtLhjSExLxfVSSJOM8yMPF4qLZCM4Za5Lchj7XynSDA==
+  dependencies:
+    prop-types "^15.7.2"
+
 "@ied/ui-avatar@^1.2.0":
   version "1.2.0"
   resolved "https://registry.npmjs.org/@ied/ui-avatar/-/ui-avatar-1.2.0.tgz#74b3320ec014fb1e8623139744e0e041d4382890"
@@ -1419,6 +1426,13 @@
   integrity sha512-0KSvwZ217fe3cBqm1JrssOQ8kXdWzXv87p8PcOmBFUcXQwWjqBmYN+0Mtb4nCiEUPm7bZj+pXdIK3UfkqUyzVw==
   dependencies:
     "@rmwc/textfield" "^5.7.2"
+    prop-types "^15.7.2"
+
+"@ied/ui-theme-fulll@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.npmjs.org/@ied/ui-theme-fulll/-/ui-theme-fulll-1.0.4.tgz#2d57f8e39934f247d01735d9d08ba97b84f5991c"
+  integrity sha512-N9n8sYpQQHme8SZcQS30/9h/RsMjn3mske5rCqwuKBHVftFiuxddRPiOmDu2N+v+s5D1qT0eEkHsNL1RH8zPiw==
+  dependencies:
     prop-types "^15.7.2"
 
 "@ied/ui-tooltip@^2.0.1":
