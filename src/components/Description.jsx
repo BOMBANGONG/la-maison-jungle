@@ -1,17 +1,19 @@
 import { useParams, useHistory } from "react-router-dom";
-import { plantList } from "../datas/plantList";
+// import { plantList } from "../datas/plantList";
 import Button from "./Button";
 import "../styles/Description.css";
 import { func } from "prop-types";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { PlantListContext } from "../context/PlantListContext";
 
 const Description = () => {
   const { updateCart } = useContext(CartContext);
+  const { plants } = useContext(PlantListContext);
 
   const history = useHistory();
   const { id } = useParams();
-  const plantData = plantList.find((e) => e.id === id);
+  const plantData = plants.find((e) => e.id === id);
   if (!plantData) {
     history.push("/shop");
     return null;

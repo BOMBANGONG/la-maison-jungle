@@ -11,16 +11,16 @@ const Shop = () => {
   return (
     <CartProvider>
       <Cart />
-      <Switch>
-        <Route path={`${path}/:id`}>
-          <Description />
-        </Route>
-        <PlantListProvider>
+      <PlantListProvider>
+        <Switch>
+          <Route path={`${path}/:id`}>
+            <Description />
+          </Route>
           <Route path={`${path}`}>
             <ShoppingList />
           </Route>
-        </PlantListProvider>
-      </Switch>
+        </Switch>
+      </PlantListProvider>
     </CartProvider>
   );
 };

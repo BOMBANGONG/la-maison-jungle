@@ -7,8 +7,6 @@ export const PlantListContext = createContext();
 export const PlantListProvider = ({ children }) => {
   const [plants, setPlants] = useState([]);
 
-  console.log("from context => ", plants);
-
   const getPlants = async () => {
     const response = await fetchPlants();
     setPlants(response);
