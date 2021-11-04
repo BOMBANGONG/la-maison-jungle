@@ -17,6 +17,10 @@ function ShoppingList() {
     []
   );
 
+  if (!plants?.length) {
+    return <div>Loading....</div>;
+  }
+
   return (
     <div className="lmj-shopping-list">
       <Categories
