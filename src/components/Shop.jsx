@@ -4,14 +4,9 @@ import Description from "./Description";
 import Cart from "./Cart";
 import { Route, useRouteMatch, Switch } from "react-router-dom";
 import { CartProvider } from "../context/CartContext";
+import { PlantListProvider } from "../context/PlantListContext";
 
 const Shop = () => {
-  // save cart items after refreshing page
-  // const [cart, updateCart] = useState(getInitCart);
-  // useEffect(() => {
-  //   localStorage.setItem("cart", JSON.stringify(cart));
-  // }, [cart]);
-
   const { path } = useRouteMatch();
   return (
     <CartProvider>
@@ -20,9 +15,11 @@ const Shop = () => {
         <Route path={`${path}/:id`}>
           <Description />
         </Route>
-        <Route path={`${path}`}>
-          <ShoppingList />
-        </Route>
+        <PlantListProvider>
+          <Route path={`${path}`}>
+            <ShoppingList />
+          </Route>
+        </PlantListProvider>
       </Switch>
     </CartProvider>
   );
