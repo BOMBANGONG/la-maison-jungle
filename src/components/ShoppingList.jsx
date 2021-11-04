@@ -1,6 +1,7 @@
 import "../styles/ShoppingList.css";
 import Card from "./Card";
 import Categories from "./Categories";
+import Progress from "./Progress";
 import { useState, useContext } from "react";
 import { array } from "prop-types";
 import { PlantListContext } from "../context/PlantListContext";
@@ -18,7 +19,7 @@ function ShoppingList() {
   );
 
   if (!plants?.length) {
-    return <div>Loading....</div>;
+    return <Progress />;
   }
 
   return (

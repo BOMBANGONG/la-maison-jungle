@@ -29,6 +29,9 @@ import "@ied/ui-menu/dist/ui-menu.min.css";
 //Textfield component
 import "@ied/ui-icon-button/dist/ui-icon-button.min.css";
 
+//Progress bar component
+import "@ied/ui-progress/dist/ui-progress.css";
+
 ReactDOM.render(
   <ThemeProvider>
     <React.StrictMode>
