@@ -5,7 +5,7 @@ import { fetchPlants } from "../api/fetchPlants";
 export const PlantListContext = createContext();
 
 export const PlantListProvider = ({ children }) => {
-  const [plants, setPlants] = useState();
+  const [plants, setPlants] = useState([]);
 
   console.log("from context => ", plants);
 
@@ -21,7 +21,7 @@ export const PlantListProvider = ({ children }) => {
   if (!plants) return null;
 
   return (
-    <PlantListContext.Provider value={plants}>
+    <PlantListContext.Provider value={{ plants }}>
       {children}
     </PlantListContext.Provider>
   );
