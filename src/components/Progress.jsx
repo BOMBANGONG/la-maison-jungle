@@ -2,7 +2,7 @@ import React from "react";
 import UiProgress from "@ied/ui-progress";
 
 const Progress = () => {
-  return <UiProgress spinner size="xlarge" />;
+  return <UiProgress spinner size="xlarge" primary />;
 };
 
 export default Progress;
