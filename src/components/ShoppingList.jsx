@@ -19,7 +19,11 @@ function ShoppingList() {
   );
 
   if (!plants?.length) {
-    return <Progress />;
+    return (
+      <div style={{ marginLeft: "auto", marginRight: "auto", width: "6rem" }}>
+        <Progress />
+      </div>
+    );
   }
 
   return (
