@@ -1,5 +1,5 @@
-import Sun from "../assets/img/sun.svg";
-import Water from "../assets/img/water.svg";
+import Sun from "../assets/sun.svg";
+import Water from "../assets/water.svg";
 import { string, number } from "prop-types";
 import React from "react";
 

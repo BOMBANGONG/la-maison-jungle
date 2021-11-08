@@ -8,7 +8,7 @@ import { useRouteMatch } from "react-router-dom";
 import { string, number, func } from "prop-types";
 import { CartContext } from "../context/CartContext";
 
-const Card = (props) => {
+const Card = (props: { id: any; name: any; cover: any; water: any; light: any; price: any; description?: "" | undefined; className: any; }) => {
   const {
     id,
     name,
@@ -28,7 +28,7 @@ const Card = (props) => {
   function goToDescription() {
     history.push(`${url}/${id}`);
   }
-  function handleAddToCart(e) {
+  function handleAddToCart(e: { stopPropagation: () => void; }) {
     e.stopPropagation();
     updateCart(name, price);
   }

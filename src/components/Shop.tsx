@@ -5,8 +5,9 @@ import Cart from "./Cart";
 import { Route, useRouteMatch, Switch } from "react-router-dom";
 import { CartProvider } from "../context/CartContext";
 import { PlantListProvider } from "../context/PlantListContext";
+import { RouteComponentProps } from "@reach/router"
 
-const Shop = () => {
+const Shop = (props: RouteComponentProps) => {
   const { path } = useRouteMatch();
   return (
     <CartProvider>
