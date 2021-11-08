@@ -3,9 +3,10 @@ import Button from "./Button";
 import "../styles/Footer.css";
 import Textfield from "./Textfield";
 import { ThemeContext } from "../context/ThemeContext";
-import { useContext } from "react";
+import React, { useContext } from "react";
 
-function Footer() {
+
+const Footer = () => {
   const { toggleTheme } = useContext(ThemeContext);
 
   return (

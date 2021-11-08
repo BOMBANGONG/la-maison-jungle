@@ -34,7 +34,7 @@ const Card = (props) => {
   }
 
   return (
-    <UiCard skeleton ripple hover onClick={goToDescription} {...{ className }}>
+    <UiCard ripple hover onClick={goToDescription} {...{ className }}>
       <img className="lmj-plant-item-cover" src={cover} alt={`${name} cover`} />
       <UiCard.Title>{name}</UiCard.Title>
       <UiCard.Subtitle>{price}€</UiCard.Subtitle>

@@ -5,8 +5,9 @@ import Progress from "./Progress";
 import { useState, useContext } from "react";
 import { array } from "prop-types";
 import { PlantListContext } from "../context/PlantListContext";
+import React from "react";
 
-function ShoppingList() {
+const ShoppingList = () => {
   const { plants } = useContext(PlantListContext);
   console.log(plants);
 

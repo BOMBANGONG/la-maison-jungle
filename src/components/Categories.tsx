@@ -2,8 +2,9 @@ import "../styles/Categories.css";
 import Button from "./Button";
 import Select from "./Select";
 import { string, array, func } from "prop-types";
+import React from "react";
 
-function Categories({ setActiveCategory, categories, activeCategory }) {
+const Categories = ({ setActiveCategory, categories, activeCategory }) => {
   function handleChange(v) {
     setActiveCategory(v?.target.value);
   }

@@ -1,4 +1,5 @@
 import { Select as UiSelect } from "@ied/ui-select";
+import React from "react";
 
 const Select = (props) => {
   const { label, options, onChange, value } = props;
@@ -13,7 +14,7 @@ const Select = (props) => {
         onChange={onChange}
         value={value}
         color="primary"
-      />
+        dataTestId={""}      />
     </div>
   );
 };

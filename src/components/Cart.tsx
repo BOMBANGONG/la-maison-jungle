@@ -2,8 +2,9 @@ import { useState, useEffect, useContext } from "react";
 import "../styles/Cart.css";
 import Button from "./Button";
 import { CartContext } from "../context/CartContext";
+import React from "react";
 
-function Cart() {
+const Cart = () => {
   const { cart, emptyCart } = useContext(CartContext);
 
   const [isOpen, setIsOpen] = useState(false);

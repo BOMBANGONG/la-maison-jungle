@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import { ThemeContext } from "./context/ThemeContext";
+// import { string } from "prop-types";
 
 function App() {
   const { theme } = useContext(ThemeContext);

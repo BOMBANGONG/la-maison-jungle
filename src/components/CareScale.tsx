@@ -1,8 +1,9 @@
-import Sun from "../assets/sun.svg";
-import Water from "../assets/water.svg";
+import Sun from "../assets/img/sun.svg";
+import Water from "../assets/img/water.svg";
 import { string, number } from "prop-types";
+import React from "react";
 
-function CareScale({ scaleValue, careType }) {
+const CareScale = ({ scaleValue, careType }) => {
   const range = [1, 2, 3];
   const scaleType =
     careType === "light" ? (

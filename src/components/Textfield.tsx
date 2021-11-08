@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import UiTextfield from "@ied/ui-textfield";
 
 const Textfield = () => {
-  const [value, setValue, setInputValue, inputValue] = useState("");
+  const [value, inputValue, setInputValue] = useState("");
 
   function handleInput(e) {
     setInputValue(e.target.value);
@@ -22,7 +22,7 @@ const Textfield = () => {
         outlined
         id="outlined_2"
         value={value}
-        onChange={((e) => setValue(e.target.value), handleInput)}
+        onChange={handleInput}
         onBlur={handleBlur}
       />
     </div>
