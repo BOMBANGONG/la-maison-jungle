@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { EventHandler, FormEvent, useState } from "react";
 import UiTextfield from "@ied/ui-textfield";
 
 const Textfield = () => {
-  const [value, inputValue, setInputValue] = useState("");
+  const [value, setInputValue] = useState<string>();
 
-  function handleInput(e) {
+  function handleInput(e: any) {
     setInputValue(e.target.value);
   }
 
   function handleBlur() {
-    if (!inputValue?.includes("@")) {
+    if (!value?.includes("@")) {
       alert(
         "Attention, il n'y a pas d'@, ceci n'est pas une adresse valide 😥"
       );

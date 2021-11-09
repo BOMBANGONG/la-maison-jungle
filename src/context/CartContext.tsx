@@ -1,6 +1,21 @@
 import React, { useState, useEffect, createContext } from "react";
 
-export const CartContext = createContext();
+type Plant =   {
+name: string,
+category: string,
+id: string,
+light: number,
+water: number,
+cover: string,
+price: number,
+description: string,
+};
+
+type Cart = ({ amount?: number } & Partial<Plant>)[]
+
+type CartContextType = {cart: Cart, updateCart: (name: string, amount: number) => void , emptyCart: () => void}
+
+export const CartContext = createContext<CartContextType>({} as CartContextType);
 
 const getInitCart = () => {
   try {
@@ -12,19 +27,19 @@ const getInitCart = () => {
   }
 };
 
-export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState(getInitCart);
+export const CartProvider: React.FC = ({ children }) => {
+  const [cart, setCart] = useState<Cart>(getInitCart);
 
-  function updateCart(name, price) {
-    const currentPlantAdded = cart.find((plant) => plant.name === name);
+  function updateCart(name: string, price: number) {
+    const currentPlantAdded = cart.find((plant) => plant?.name === name);
 
     if (currentPlantAdded) {
       const cartFilteredCurrentPlant = cart.filter(
-        (plant) => plant.name !== name
+        (plant) => plant?.name !== name
       );
       setCart([
         ...cartFilteredCurrentPlant,
-        { name, price, amount: currentPlantAdded.amount + 1 },
+        { name, price, amount: (currentPlantAdded.amount ?? 0) + 1 },
       ]);
     } else {
       setCart([...cart, { name, price, amount: 1 }]);

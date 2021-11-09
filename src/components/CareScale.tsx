@@ -1,9 +1,13 @@
 import Sun from "../assets/sun.svg";
 import Water from "../assets/water.svg";
-import { string, number } from "prop-types";
 import React from "react";
 
-const CareScale = ({ scaleValue, careType }) => {
+interface Props{
+  scaleValue: number;
+  careType: string
+}
+
+const CareScale: React.FC<Props>= ({ scaleValue, careType }) => {
   const range = [1, 2, 3];
   const scaleType =
     careType === "light" ? (
@@ -22,10 +26,5 @@ const CareScale = ({ scaleValue, careType }) => {
     </div>
   );
 }
-
-CareScale.propTypes = {
-  scaleValue: number,
-  careType: string,
-};
 
 export default CareScale;

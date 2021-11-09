@@ -1,9 +1,10 @@
 import React from "react";
-import UiButton, { ButtonProps } from "@ied/ui-button";
-import { FabProps } from "@rmwc/fab";
+import UiButton from "@ied/ui-button";
 
 
-const Button = (props: JSX.IntrinsicAttributes & ButtonProps & FabProps & React.HTMLAttributes<HTMLElement> & { children?: React.ReactNode; }) => {
+type Props = React.ComponentProps<typeof UiButton>
+
+const Button: React.FC<Props> = (props) => {
   return (
     <div>
       <UiButton {...props}></UiButton>

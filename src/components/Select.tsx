@@ -1,7 +1,9 @@
 import { Select as UiSelect } from "@ied/ui-select";
 import React from "react";
 
-const Select = (props) => {
+
+
+const Select = (props: { label: any; options: any; onChange: any; value: any; }) => {
   const { label, options, onChange, value } = props;
   return (
     <div>

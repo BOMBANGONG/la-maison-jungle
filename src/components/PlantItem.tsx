@@ -1,13 +1,18 @@
 import CareScale from "./CareScale";
 import "../styles/PlantItem.css";
-import { string } from "prop-types";
 import React from "react";
 
-const handleClick = (plantName) => {
+interface Plants {
+  name: string;
+  water: number;
+  light: number;
+}
+
+const handleClick = (plantName: any) => {
   alert(`Vous voulez acheter 1 ${plantName}? Très bon choix 🌱✨`);
 }
 
-function PlantItem({ name, water, light }) {
+function PlantItem({ name, water, light }: Plants) {
   return (
     <li className="lmj-plant-item" onClick={() => handleClick}>
       {name}
@@ -18,8 +23,5 @@ function PlantItem({ name, water, light }) {
     </li>
   );
 }
-handleClick.propTypes = {
-  plantName: string,
-};
 
 export default PlantItem;

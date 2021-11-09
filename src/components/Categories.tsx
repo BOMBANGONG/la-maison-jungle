@@ -4,8 +4,14 @@ import Select from "./Select";
 import { string, array, func } from "prop-types";
 import React from "react";
 
-const Categories = ({ setActiveCategory, categories, activeCategory }) => {
-  function handleChange(v) {
+interface Props{
+  setActiveCategory: Function;
+  categories: string;
+  activeCategory: string;
+}
+
+const Categories = ({ setActiveCategory, categories, activeCategory }: Props) => {
+  function handleChange(v: { target: { value: any; }; }) {
     setActiveCategory(v?.target.value);
   }
   return (
@@ -22,9 +28,7 @@ const Categories = ({ setActiveCategory, categories, activeCategory }) => {
 }
 
 Categories.propTypes = {
-  setActiveCategory: func,
-  categories: array,
-  activeCategory: string,
+
 };
 
 export default Categories;

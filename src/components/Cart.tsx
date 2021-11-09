@@ -4,13 +4,15 @@ import Button from "./Button";
 import { CartContext } from "../context/CartContext";
 import React from "react";
 
+
+
 const Cart = () => {
   const { cart, emptyCart } = useContext(CartContext);
 
   const [isOpen, setIsOpen] = useState(false);
 
   const total = cart.reduce(
-    (acc, plantType) => acc + plantType.amount * plantType.price,
+    (acc, plantType) => acc + (plantType.amount??0) * (plantType.price??0),
     0
   );
 
@@ -26,7 +28,7 @@ const Cart = () => {
     <div className="lmj-cart">
       <Button label={"close"} onClick={() => setIsOpen(false)} />
       <h2>Cart</h2>
-      {cart.map(({ name, price, amount }, index) => (
+      {cart.map(({ name, price, amount }: any, index: any) => (
         <div key={`${name}-${index}`}>
           {name} {price} * {amount}
         </div>

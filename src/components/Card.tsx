@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { MouseEvent, useContext } from "react";
 import UiButton from "@ied/ui-button";
 import UiCard from "@ied/ui-card";
 import CareScale from "./CareScale";
@@ -8,7 +8,9 @@ import { useRouteMatch } from "react-router-dom";
 import { string, number, func } from "prop-types";
 import { CartContext } from "../context/CartContext";
 
-const Card = (props: { id: any; name: any; cover: any; water: any; light: any; price: any; description?: "" | undefined; className: any; }) => {
+type Props = { id: any; name: any; cover: any; water: any; light: any; price: any; description?: "" | undefined; className: any; }
+
+const Card = (props: Props) => {
   const {
     id,
     name,
@@ -28,7 +30,7 @@ const Card = (props: { id: any; name: any; cover: any; water: any; light: any; p
   function goToDescription() {
     history.push(`${url}/${id}`);
   }
-  function handleAddToCart(e: { stopPropagation: () => void; }) {
+  function handleAddToCart(e: MouseEvent<HTMLButtonElement>) {
     e.stopPropagation();
     updateCart(name, price);
   }

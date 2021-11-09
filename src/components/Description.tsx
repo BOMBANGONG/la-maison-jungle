@@ -7,13 +7,15 @@ import { CartContext } from "../context/CartContext";
 import { PlantListContext } from "../context/PlantListContext";
 import React from "react";
 
+
+
 const Description = () => {
   const { updateCart } = useContext(CartContext);
   const { plants } = useContext(PlantListContext);
 
   const history = useHistory();
-  const { id } = useParams();
-  const plantData = plants.find((e) => e.id === id);
+  const { id } = useParams<{ id: string }>();
+  const plantData = plants.find((e: { id: any; }) => e.id === id);
   if (!plantData) {
     history.push("/shop");
     return null;

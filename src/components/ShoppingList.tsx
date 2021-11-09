@@ -14,7 +14,7 @@ const ShoppingList = () => {
   const [activeCategory, setActiveCategory] = useState("");
 
   const categories = plants?.reduce(
-    (acc, plant) =>
+    (acc: string | any[], plant: { category: any; }) =>
       acc.includes(plant.category) ? acc : acc.concat(plant.category),
     []
   );
@@ -35,17 +35,17 @@ const ShoppingList = () => {
         activeCategory={activeCategory}
       />
       <div className="lmj-plant-container">
-        {plants?.map(({ id, name, cover, water, light, price, category }) =>
-          !activeCategory || activeCategory === category ? (
+        {plants?.map((props: { id: string; name: string; cover: string; water: number; light: number; price: number; category: any }) =>
+          !activeCategory || activeCategory === props.category ? (
             <Card
               className="lmj-plant-card"
-              key={id}
-              id={id}
-              name={name}
-              cover={cover}
-              water={water}
-              light={light}
-              price={price}
+              key={props.id}
+              id={props.id}
+              name={props.name}
+              cover={props.cover}
+              water={props.water}
+              light={props.light}
+              price={props.price}
             />
           ) : null
         )}

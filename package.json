@@ -24,11 +24,16 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.6",
+    "@types/reach__router": "^1.3.9",
+    "@types/react": "^17.0.34",
+    "@types/react-dom": "^17.0.11",
     "axios": "^0.24.0",
     "express": "^4.17.1",
     "git-all": "^0.0.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
@@ -37,7 +42,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "stop": "taskkill -F -IM node.exe"
   },
   "eslintConfig": {
     "extends": [
@@ -56,5 +62,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-router-dom": "^5.3.2",
+    "awesome-typescript-loader": "^5.2.1",
+    "source-map-loader": "^3.0.0",
+    "typescript": "^4.4.4"
   }
 }
