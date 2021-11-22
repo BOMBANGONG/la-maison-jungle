@@ -2,9 +2,27 @@ import React, { useEffect } from 'react'
 import { useState, createContext } from 'react'
 import { fetchPlants } from '../api/fetchPlants'
 
-export const PlantListContext = createContext()
+type Plant = {
+  name: string
+  category: string
+  id: string
+  light: number
+  water: number
+  cover: string
+  price: number
+  description: string
+}
 
-export const PlantListProvider = ({ children }) => {
+type PlantListContextType = {
+  plants: Plant[]
+  isPlantLoading: boolean
+}
+
+export const PlantListContext = createContext<PlantListContextType>(
+  {} as PlantListContextType,
+)
+
+export const PlantListProvider: React.FC = ({ children }) => {
   const [plants, setPlants] = useState([])
   const [isPlantLoading, setIsPlantLoading] = useState(false)
 
@@ -15,7 +33,6 @@ export const PlantListProvider = ({ children }) => {
       if (response?.length) {
         setPlants(response)
       }
-      // setPlants(response)
       setIsPlantLoading(false)
       console.log(response)
     } catch (error) {

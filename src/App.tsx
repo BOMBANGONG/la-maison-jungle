@@ -1,20 +1,17 @@
-import React, { useContext } from "react";
-import Banner from "./components/Banner";
-import Footer from "./components/Footer";
-import Shop from "./components/Shop";
-import Home from "./components/Home";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./App.css";
-import { ThemeContext } from "./context/ThemeContext";
-// import { string } from "prop-types";
+import React, { useContext } from 'react'
+import Banner from './components/Banner'
+import Footer from './components/Footer'
+import Shop from './components/Shop'
+import Home from './components/Home'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import './App.css'
+import { ThemeContext } from './context/ThemeContext'
 
 function App() {
-
-
-  const { theme } = useContext(ThemeContext);
-  let classes = theme;
+  const { theme } = useContext(ThemeContext)
+  let classes = theme
   // eslint-disable-next-line no-useless-concat
-  classes += " " + "main-container";
+  classes += ' ' + 'main-container'
 
   return (
     <div className={classes}>
@@ -31,7 +28,7 @@ function App() {
       </Router>
       <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

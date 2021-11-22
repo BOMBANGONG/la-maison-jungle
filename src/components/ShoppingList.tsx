@@ -15,7 +15,7 @@ const ShoppingList = () => {
   const [activeCategory, setActiveCategory] = useState('')
 
   const categories = plants?.reduce(
-    (acc: string | any[], plant: { category: any }) =>
+    (acc: string[], plant) =>
       acc.includes(plant.category) ? acc : acc.concat(plant.category),
     [],
   )
