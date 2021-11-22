@@ -1,40 +1,36 @@
-import "../styles/ShoppingList.css";
-import Card from "./Card";
-import Categories from "./Categories";
-import Progress from "./Progress";
-import { NoDataPage } from "./NoDataPage";
-import { useState, useContext } from "react";
-import { array } from "prop-types";
-import { PlantListContext } from "../context/PlantListContext";
-import React from "react";
+import '../styles/ShoppingList.css'
+import Card from './Card'
+import Categories from './Categories'
+import Progress from './Progress'
+import { NoDataPage } from './NoDataPage'
+import { useState, useContext } from 'react'
+import { array } from 'prop-types'
+import { PlantListContext } from '../context/PlantListContext'
+import React from 'react'
 
 const ShoppingList = () => {
-  const { plants, isPlantLoading } = useContext(PlantListContext);
-  console.log(plants);
+  const { plants, isPlantLoading } = useContext(PlantListContext)
+  console.log(plants)
 
-  const [activeCategory, setActiveCategory] = useState("");
+  const [activeCategory, setActiveCategory] = useState('')
 
   const categories = plants?.reduce(
-    (acc: string | any[], plant: { category: any; }) =>
+    (acc: string | any[], plant: { category: any }) =>
       acc.includes(plant.category) ? acc : acc.concat(plant.category),
-    []
-  );
+    [],
+  )
 
   if (isPlantLoading) {
     return (
-      <div style={{ marginLeft: "auto", marginRight: "auto", width: "6rem" }}>
+      <div style={{ marginLeft: 'auto', marginRight: 'auto', width: '6rem' }}>
         <Progress />
       </div>
-    );
-  } 
-  
-
-  if (!plants?.length){
-    return(
-      <NoDataPage title={"No data to display"}/>
     )
   }
 
+  if (!plants?.length) {
+    return <NoDataPage title={'No data to display'} />
+  }
 
   return (
     <div className="lmj-shopping-list">
@@ -44,28 +40,37 @@ const ShoppingList = () => {
         activeCategory={activeCategory}
       />
       <div className="lmj-plant-container">
-        {plants?.map((props: { id: string; name: string; cover: string; water: number; light: number; price: number; category: any }) =>
-          !activeCategory || activeCategory === props.category ? (
-            <Card
-              className="lmj-plant-card"
-              key={props.id}
-              id={props.id}
+        {plants?.map(
+          (props: {
+            id: string
+            name: string
+            cover: string
+            water: number
+            light: number
+            price: number
+            category: any
+          }) =>
+            !activeCategory || activeCategory === props.category ? (
+              <Card
+                className="lmj-plant-card"
+                key={props.id}
+                id={props.id}
                 name={props.name}
-              cover={props.cover}
-              water={props.water}
-              light={props.light}
-              price={props.price}
-            />
-          ) : null
+                cover={props.cover}
+                water={props.water}
+                light={props.light}
+                price={props.price}
+              />
+            ) : null,
         )}
       </div>
     </div>
-  );
+  )
 }
 
 ShoppingList.propTypes = {
   cart: array,
   setCart: array,
-};
+}
 
-export default ShoppingList;
+export default ShoppingList
