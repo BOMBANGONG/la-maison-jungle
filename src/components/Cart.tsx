@@ -1,32 +1,30 @@
-import { useState, useEffect, useContext } from "react";
-import "../styles/Cart.css";
-import Button from "./Button";
-import { CartContext } from "../context/CartContext";
-import React from "react";
+import { useState, useEffect, useContext } from 'react'
+import '../styles/Cart.css'
+import Button from './Button'
+import { CartContext } from '../context/CartContext'
+import React from 'react'
 
+const Cart: React.FC = () => {
+  const { cart, emptyCart } = useContext(CartContext)
 
-
-const Cart = () => {
-  const { cart, emptyCart } = useContext(CartContext);
-
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   const total = cart.reduce(
-    (acc, plantType) => acc + (plantType.amount??0) * (plantType.price??0),
-    0
-  );
+    (acc, plantType) => acc + (plantType.amount ?? 0) * (plantType.price ?? 0),
+    0,
+  )
 
   // cart remains open when is not empty
   useEffect(() => {
     if (total && !isOpen) {
-      setIsOpen(true);
+      setIsOpen(true)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [total]);
+  }, [total])
 
   return isOpen ? (
     <div className="lmj-cart">
-      <Button id="" label={"close"} onClick={() => setIsOpen(false)} />
+      <Button id="" label={'close'} onClick={() => setIsOpen(false)} />
       <h2>Cart</h2>
       {cart.map(({ name, price, amount }: any, index: any) => (
         <div key={`${name}-${index}`}>
@@ -35,13 +33,13 @@ const Cart = () => {
       ))}
 
       <h3>Total:{total}€</h3>
-      <Button id="" label={"Empty Cart"} onClick={() => emptyCart()} />
+      <Button id="" label={'Empty Cart'} onClick={() => emptyCart()} />
     </div>
   ) : (
     <div className="lmj-cart-closed">
-      <Button id="" label={"Open Cart"} onClick={() => setIsOpen(true)} />
+      <Button id="" label={'Open Cart'} onClick={() => setIsOpen(true)} />
     </div>
-  );
+  )
 }
 
-export default Cart;
+export default Cart

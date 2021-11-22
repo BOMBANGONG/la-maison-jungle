@@ -1,8 +1,8 @@
-import React from "react";
-import UiProgress from "@ied/ui-progress";
+import React from 'react'
+import UiProgress from '@ied/ui-progress'
 
-const Progress = () => {
-  return <UiProgress spinner size="xlarge" primary />;
-};
+const Progress: React.FC = () => {
+  return <UiProgress spinner size="xlarge" primary />
+}
 
-export default Progress;
+export default Progress

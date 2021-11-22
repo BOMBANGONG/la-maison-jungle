@@ -1,14 +1,23 @@
-import React, { MouseEvent, useContext } from "react";
-import UiButton from "@ied/ui-button";
-import UiCard from "@ied/ui-card";
-import CareScale from "./CareScale";
-import { useHistory } from "react-router-dom";
-import "../styles/Card.css";
-import { useRouteMatch } from "react-router-dom";
-import { string, number, func } from "prop-types";
-import { CartContext } from "../context/CartContext";
+import React, { MouseEvent, useContext } from 'react'
+import UiButton from '@ied/ui-button'
+import UiCard from '@ied/ui-card'
+import CareScale from './CareScale'
+import { useHistory } from 'react-router-dom'
+import '../styles/Card.css'
+import { useRouteMatch } from 'react-router-dom'
+import { string, number, func } from 'prop-types'
+import { CartContext } from '../context/CartContext'
 
-type Props = { id: any; name: any; cover: any; water: any; light: any; price: any; description?: "" | undefined; className: any; }
+type Props = {
+  id: string
+  name: string
+  cover: string
+  water: number
+  light: number
+  price: number
+  description?: string
+  className: string
+}
 
 const Card = (props: Props) => {
   const {
@@ -18,21 +27,21 @@ const Card = (props: Props) => {
     water,
     light,
     price,
-    description = "",
+    description = '',
     className,
-  } = props;
+  } = props
 
-  const { updateCart } = useContext(CartContext);
+  const { updateCart } = useContext(CartContext)
 
-  const { url } = useRouteMatch();
-  const history = useHistory();
+  const { url } = useRouteMatch()
+  const history = useHistory()
 
   function goToDescription() {
-    history.push(`${url}/${id}`);
+    history.push(`${url}/${id}`)
   }
   function handleAddToCart(e: MouseEvent<HTMLButtonElement>) {
-    e.stopPropagation();
-    updateCart(name, price);
+    e.stopPropagation()
+    updateCart(name, price)
   }
 
   return (
@@ -52,8 +61,8 @@ const Card = (props: Props) => {
         </UiButton>
       </UiCard.Actions>
     </UiCard>
-  );
-};
+  )
+}
 
 // eslint-disable-next-line react/no-typos
 Card.propTypes = {
@@ -66,6 +75,6 @@ Card.propTypes = {
   price: number,
   description: string,
   className: string,
-};
+}
 
-export default Card;
+export default Card

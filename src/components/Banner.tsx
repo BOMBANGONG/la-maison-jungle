@@ -1,10 +1,10 @@
-import React from "react";
-import "../styles/Banner.css";
-import logo from "../assets/logo.png";
-import { Link } from "react-router-dom";
+import React from 'react'
+import '../styles/Banner.css'
+import logo from '../assets/logo.png'
+import { Link } from 'react-router-dom'
 
-const Banner = () => {
-  const title = "La maison jungle";
+const Banner: React.FC = () => {
+  const title = 'La maison jungle'
   return (
     <div className="lmj-banner">
       <ul className="lmj-nav">
@@ -24,7 +24,7 @@ const Banner = () => {
         <h1 className="lmj-title">{title}</h1>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Banner;
+export default Banner

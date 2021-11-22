@@ -1,18 +1,16 @@
-import React, { EventHandler, FormEvent, useState } from "react";
-import UiTextfield from "@ied/ui-textfield";
+import React, { useState } from 'react'
+import UiTextfield from '@ied/ui-textfield'
 
-const Textfield = () => {
-  const [value, setInputValue] = useState<string>();
+const Textfield: React.FC = () => {
+  const [value, setInputValue] = useState<string>()
 
   function handleInput(e: any) {
-    setInputValue(e.target.value);
+    setInputValue(e.target.value)
   }
 
   function handleBlur() {
-    if (!value?.includes("@")) {
-      alert(
-        "Attention, il n'y a pas d'@, ceci n'est pas une adresse valide 😥"
-      );
+    if (!value?.includes('@')) {
+      alert("Attention, il n'y a pas d'@, ceci n'est pas une adresse valide 😥")
     }
   }
   return (
@@ -26,7 +24,7 @@ const Textfield = () => {
         onBlur={handleBlur}
       />
     </div>
-  );
-};
+  )
+}
 
-export default Textfield;
+export default Textfield
