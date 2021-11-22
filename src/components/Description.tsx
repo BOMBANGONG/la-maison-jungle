@@ -35,11 +35,12 @@ const Description = () => {
           <p>{description}</p>
           <p>{price}€</p>
           <Button
+            id=""
             primary
             label={"Add"}
             onClick={() => updateCart(name, price)}
           />
-          <Button label={"Back"} onClick={() => history.push("/shop")} />
+          <Button id="" label={"Back"} onClick={() => history.push("/shop")} />
         </div>
       </div>
     </div>

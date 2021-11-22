@@ -22,7 +22,7 @@ const Categories = ({ setActiveCategory, categories, activeCategory }: Props) =>
         value={activeCategory}
         onChange={handleChange}
       />
-      <Button label={"Reset"} onClick={() => setActiveCategory("")} />
+      <Button id="" label={"Reset"} onClick={() => setActiveCategory("")} />
     </div>
   );
 }

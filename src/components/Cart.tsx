@@ -26,7 +26,7 @@ const Cart = () => {
 
   return isOpen ? (
     <div className="lmj-cart">
-      <Button label={"close"} onClick={() => setIsOpen(false)} />
+      <Button id="" label={"close"} onClick={() => setIsOpen(false)} />
       <h2>Cart</h2>
       {cart.map(({ name, price, amount }: any, index: any) => (
         <div key={`${name}-${index}`}>
@@ -35,11 +35,11 @@ const Cart = () => {
       ))}
 
       <h3>Total:{total}€</h3>
-      <Button label={"Empty Cart"} onClick={() => emptyCart()} />
+      <Button id="" label={"Empty Cart"} onClick={() => emptyCart()} />
     </div>
   ) : (
     <div className="lmj-cart-closed">
-      <Button label={"Open Cart"} onClick={() => setIsOpen(true)} />
+      <Button id="" label={"Open Cart"} onClick={() => setIsOpen(true)} />
     </div>
   );
 }

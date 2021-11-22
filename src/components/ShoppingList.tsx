@@ -2,13 +2,14 @@ import "../styles/ShoppingList.css";
 import Card from "./Card";
 import Categories from "./Categories";
 import Progress from "./Progress";
+import { NoDataPage } from "./NoDataPage";
 import { useState, useContext } from "react";
 import { array } from "prop-types";
 import { PlantListContext } from "../context/PlantListContext";
 import React from "react";
 
 const ShoppingList = () => {
-  const { plants } = useContext(PlantListContext);
+  const { plants, isPlantLoading } = useContext(PlantListContext);
   console.log(plants);
 
   const [activeCategory, setActiveCategory] = useState("");
@@ -19,13 +20,21 @@ const ShoppingList = () => {
     []
   );
 
-  if (!plants?.length) {
+  if (isPlantLoading) {
     return (
       <div style={{ marginLeft: "auto", marginRight: "auto", width: "6rem" }}>
         <Progress />
       </div>
     );
+  } 
+  
+
+  if (!plants?.length){
+    return(
+      <NoDataPage title={"No data to display"}/>
+    )
   }
+
 
   return (
     <div className="lmj-shopping-list">
@@ -41,7 +50,7 @@ const ShoppingList = () => {
               className="lmj-plant-card"
               key={props.id}
               id={props.id}
-              name={props.name}
+                name={props.name}
               cover={props.cover}
               water={props.water}
               light={props.light}

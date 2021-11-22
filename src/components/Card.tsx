@@ -40,14 +40,14 @@ const Card = (props: Props) => {
       <img className="lmj-plant-item-cover" src={cover} alt={`${name} cover`} />
       <UiCard.Title>{name}</UiCard.Title>
       <UiCard.Subtitle>{price}€</UiCard.Subtitle>
-      <UiCard.Text>{description}</UiCard.Text>
+      <UiCard.Text dataTestId="">{description}</UiCard.Text>
       <div className="lmj-caretypes">
         <CareScale careType="water" scaleValue={water} />
         <CareScale careType="light" scaleValue={light} />
       </div>
 
-      <UiCard.Actions>
-        <UiButton primary onClick={handleAddToCart}>
+      <UiCard.Actions dataTestId="">
+        <UiButton id="" primary onClick={handleAddToCart}>
           Add
         </UiButton>
       </UiCard.Actions>

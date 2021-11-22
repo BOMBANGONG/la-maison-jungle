@@ -8,6 +8,7 @@ const Select = (props: { label: any; options: any; onChange: any; value: any; })
   return (
     <div>
       <UiSelect
+        id=""
         style={{
           width: "160px",
         }}

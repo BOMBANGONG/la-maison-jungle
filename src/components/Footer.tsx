@@ -16,7 +16,7 @@ const Footer = () => {
       </div>
       <div className="lmj-footer-elem">Laissez-nous votre mail :</div>
       <Textfield />
-      <Button onClick={toggleTheme}>Change mode</Button>
+      <Button id="" onClick={toggleTheme}>Change mode</Button>
     </footer>
   );
 }
