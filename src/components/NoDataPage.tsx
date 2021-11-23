@@ -1,13 +1,11 @@
 import React from 'react'
+import noData from '../assets/noData.jpg'
+import '../styles/NoData.css'
 
-type NoDataPageProps = {
-  title: string
-}
-
-export const NoDataPage: React.FC<NoDataPageProps> = ({ title }) => {
+export const NoDataPage: React.FC = () => {
   return (
     <div>
-      <h1>{title}</h1>
+      <img src={noData} alt="No Data img" className="center" />
     </div>
   )
 }

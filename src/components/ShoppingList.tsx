@@ -29,7 +29,7 @@ const ShoppingList: React.FC = () => {
   }
 
   if (!plants?.length) {
-    return <NoDataPage title={'No data to display'} />
+    return <NoDataPage />
   }
 
   return (
