@@ -1,13 +1,12 @@
 import '../styles/Categories.css'
 import Button from './Button'
 import Select from './Select'
-import { string, array, func } from 'prop-types'
 import React from 'react'
 
 interface Props {
-  setActiveCategory: Function
   categories: string[]
   activeCategory: string
+  setActiveCategory: Function
 }
 
 const Categories = ({
@@ -15,8 +14,8 @@ const Categories = ({
   categories,
   activeCategory,
 }: Props) => {
-  function handleChange(v: { target: { value: any } }) {
-    setActiveCategory(v?.target.value)
+  function handleChange(e: any) {
+    setActiveCategory(e?.target.value)
   }
   return (
     <div className="lmj-categories">

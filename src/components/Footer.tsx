@@ -1,13 +1,11 @@
-// import { useState } from "react";
-import Button from "./Button";
-import "../styles/Footer.css";
-import Textfield from "./Textfield";
-import { ThemeContext } from "../context/ThemeContext";
-import React, { useContext } from "react";
+import Button from './Button'
+import '../styles/Footer.css'
+import Textfield from './Textfield'
+import { ThemeContext } from '../context/ThemeContext'
+import React, { useContext } from 'react'
 
-
-const Footer = () => {
-  const { toggleTheme } = useContext(ThemeContext);
+const Footer: React.FC = () => {
+  const { toggleTheme } = useContext(ThemeContext)
 
   return (
     <footer className="lmj-footer">
@@ -16,9 +14,11 @@ const Footer = () => {
       </div>
       <div className="lmj-footer-elem">Laissez-nous votre mail :</div>
       <Textfield />
-      <Button id="" onClick={toggleTheme}>Change mode</Button>
+      <Button id="" onClick={toggleTheme}>
+        Change mode
+      </Button>
     </footer>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

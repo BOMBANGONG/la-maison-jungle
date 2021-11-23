@@ -8,7 +8,7 @@ import { array } from 'prop-types'
 import { PlantListContext } from '../context/PlantListContext'
 import React from 'react'
 
-const ShoppingList = () => {
+const ShoppingList: React.FC = () => {
   const { plants, isPlantLoading } = useContext(PlantListContext)
   console.log(plants)
 

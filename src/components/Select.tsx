@@ -1,25 +1,31 @@
-import { Select as UiSelect } from "@ied/ui-select";
-import React from "react";
+import { Select as UiSelect } from '@ied/ui-select'
+import React from 'react'
 
+type Props = {
+  label: string
+  options: any
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  value: string
+}
 
-
-const Select = (props: { label: any; options: any; onChange: any; value: any; }) => {
-  const { label, options, onChange, value } = props;
+const Select = (props: Props) => {
+  const { label, options, onChange, value } = props
   return (
     <div>
       <UiSelect
         id=""
         style={{
-          width: "160px",
+          width: '160px',
         }}
         label={label}
         options={options}
         onChange={onChange}
         value={value}
         color="primary"
-        dataTestId={""}      />
+        dataTestId={''}
+      />
     </div>
-  );
-};
+  )
+}
 
-export default Select;
+export default Select
