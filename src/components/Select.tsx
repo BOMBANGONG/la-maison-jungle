@@ -4,7 +4,7 @@ import React from 'react'
 type Props = {
   label: string
   options: any
-  onChange: () => void
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
   value: string
 }
 
