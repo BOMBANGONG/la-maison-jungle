@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import UiTextfield from '@ied/ui-textfield'
 
 const Textfield: React.FC = () => {
-  const [value, setInputValue] = useState<string>()
+  const [inputValue, setInputValue] = useState<string>()
 
   function handleInput(e: any) {
     setInputValue(e.target.value)
   }
 
   function handleBlur() {
-    if (!value?.includes('@')) {
+    if (!inputValue?.includes('@')) {
       alert("Attention, il n'y a pas d'@, ceci n'est pas une adresse valide 😥")
     }
   }
@@ -19,7 +19,7 @@ const Textfield: React.FC = () => {
         dataTestId="outlined_2"
         outlined
         id="outlined_2"
-        value={value}
+        value={inputValue}
         onChange={handleInput}
         onBlur={handleBlur}
       />

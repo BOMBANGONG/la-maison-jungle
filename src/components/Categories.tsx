@@ -7,7 +7,6 @@ interface Props {
   categories: string[]
   activeCategory: string
   setActiveCategory: Function
-  // onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const Categories = ({
