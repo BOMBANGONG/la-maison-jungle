@@ -4,7 +4,7 @@ import '../styles/NoData.css'
 
 export const NoDataPage: React.FC = () => {
   return (
-    <div>
+    <div className="img-container">
       <img src={noData} alt="No Data img" className="center" />
     </div>
   )
