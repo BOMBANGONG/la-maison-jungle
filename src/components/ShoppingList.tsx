@@ -4,7 +4,6 @@ import Categories from './Categories'
 import Progress from './Progress'
 import { NoDataPage } from './NoDataPage'
 import { useState, useContext } from 'react'
-import { array } from 'prop-types'
 import { PlantListContext } from '../context/PlantListContext'
 import React from 'react'
 
@@ -33,7 +32,7 @@ const ShoppingList: React.FC = () => {
   }
 
   return (
-    <div className="lmj-shopping-list">
+    <div className="lmj-plantList">
       <Categories
         categories={categories}
         setActiveCategory={setActiveCategory}
@@ -66,11 +65,6 @@ const ShoppingList: React.FC = () => {
       </div>
     </div>
   )
-}
-
-ShoppingList.propTypes = {
-  cart: array,
-  setCart: array,
 }
 
 export default ShoppingList

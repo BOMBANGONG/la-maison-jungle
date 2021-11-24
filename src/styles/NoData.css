@@ -1,6 +1,8 @@
+.img-container {
+  margin: 0 auto;
+  width: 25%;
+}
+
 .center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: 37rem;
+  width: 100%;
 }
