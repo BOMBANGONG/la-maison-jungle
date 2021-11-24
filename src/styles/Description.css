@@ -4,14 +4,15 @@
 
 .container {
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   width: 50%;
+  height: 28vw;
+  object-fit: scale-down;
 }
 
 .img-src img {
   width: 500px;
-  height: auto;
+  height: 28vw;
 }
 
 .text-src h2,
