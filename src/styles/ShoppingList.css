@@ -1,5 +1,8 @@
 .lmj-plantList {
   margin: 0 auto;
+  width: 90%;
+  height: 39em;
+  overflow: scroll;
 }
 
 .lmj-plant-container {
@@ -15,5 +18,11 @@
   .ui-card.lmj-plant-card {
     width: 100%;
     margin: 0 8px;
+  }
+}
+
+@media screen and (max-width: 1800px) {
+  .lmj-plantList {
+    height: 30rem;
   }
 }
