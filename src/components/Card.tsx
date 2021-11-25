@@ -5,7 +5,6 @@ import CareScale from './CareScale'
 import { useHistory } from 'react-router-dom'
 import '../styles/Card.css'
 import { useRouteMatch } from 'react-router-dom'
-import { string, number, func } from 'prop-types'
 import { CartContext } from '../context/CartContext'
 
 type Props = {
@@ -62,19 +61,6 @@ const Card = (props: Props) => {
       </UiCard.Actions>
     </UiCard>
   )
-}
-
-// eslint-disable-next-line react/no-typos
-Card.propTypes = {
-  id: string,
-  name: string,
-  cover: string,
-  water: number,
-  light: number,
-  addToCart: func,
-  price: number,
-  description: string,
-  className: string,
 }
 
 export default Card

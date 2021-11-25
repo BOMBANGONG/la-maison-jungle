@@ -22,24 +22,22 @@ const Description: React.FC = () => {
   const { cover, name, price, description } = plantData
 
   return (
-    <div>
-      <div className="container">
-        <div className="img-src">
-          <img src={cover} alt={`${name} cover`} />
-        </div>
+    <div className="container">
+      <div className="img-src">
+        <img src={cover} alt={`${name} cover`} />
+      </div>
 
-        <div className="text-src">
-          <h2>{name}</h2>
-          <p>{description}</p>
-          <p>{price}€</p>
-          <Button
-            id=""
-            primary
-            label={'Add'}
-            onClick={() => updateCart(name, price)}
-          />
-          <Button id="" label={'Back'} onClick={() => history.push('/shop')} />
-        </div>
+      <div className="text-src">
+        <h2>{name}</h2>
+        <p>{description}</p>
+        <p>{price}€</p>
+        <Button
+          id=""
+          primary
+          label={'Add'}
+          onClick={() => updateCart(name, price)}
+        />
+        <Button id="" label={'Back'} onClick={() => history.push('/shop')} />
       </div>
     </div>
   )
