@@ -9,7 +9,6 @@ import React from 'react'
 
 const ShoppingList: React.FC = () => {
   const { plants, isPlantLoading } = useContext(PlantListContext)
-  console.log(plants)
 
   const [activeCategory, setActiveCategory] = useState('')
 
