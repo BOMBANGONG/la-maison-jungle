@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { useState, createContext } from 'react'
+import React, { useEffect, useReducer } from 'react'
+import { createContext, Reducer } from 'react'
 import { fetchPlants } from '../api/fetchPlants'
 
 type Plant = {
@@ -18,25 +18,70 @@ type PlantListContextType = {
   isPlantLoading: boolean
 }
 
+enum ActionTypes {
+  fetchStart = 'fetchStart',
+  fetchSuccess = 'fetchSuccess',
+  fetchFail = 'fetchFail',
+}
+
+type Action = {
+  type: ActionTypes
+  payload?: Plant[]
+}
+
+type PlantsState = {
+  entities: Plant[]
+  isLoading: boolean
+}
+
 export const PlantListContext = createContext<PlantListContextType>(
   {} as PlantListContextType,
 )
 
+const initialState: PlantsState = {
+  entities: [] as Plant[],
+  isLoading: false,
+}
+
+const plantsReducer = (state: PlantsState, action: Action): PlantsState => {
+  switch (action.type) {
+    case ActionTypes.fetchStart: {
+      return { ...state, isLoading: true }
+    }
+    case ActionTypes.fetchFail: {
+      return { ...state, isLoading: false }
+    }
+    case ActionTypes.fetchSuccess: {
+      const { payload } = action
+      const newState = { entities: payload as Plant[], isLoading: false }
+      return newState
+    }
+    default:
+      return state
+  }
+}
+
 export const PlantListProvider: React.FC = ({ children }) => {
-  const [plants, setPlants] = useState([])
-  const [isPlantLoading, setIsPlantLoading] = useState(false)
+  const [plants, dispatch] = useReducer<Reducer<PlantsState, Action>>(
+    plantsReducer,
+    initialState,
+  )
 
   const getPlants = async () => {
-    setIsPlantLoading(true)
+    dispatch({ type: ActionTypes.fetchStart })
+
     try {
       const response = await fetchPlants()
-      if (response?.length) {
-        setPlants(response)
+      if (response.data) {
+        const action = {
+          type: ActionTypes.fetchSuccess,
+          payload: response.data,
+        }
+        dispatch(action)
       }
-      setIsPlantLoading(false)
       console.log(response)
     } catch (error) {
-      setIsPlantLoading(false)
+      dispatch({ type: ActionTypes.fetchFail })
       console.error(error)
     }
   }
@@ -47,8 +92,13 @@ export const PlantListProvider: React.FC = ({ children }) => {
 
   if (!plants) return null
 
+  const contextValue = {
+    isPlantLoading: plants.isLoading,
+    plants: plants.entities,
+  }
+
   return (
-    <PlantListContext.Provider value={{ isPlantLoading, plants }}>
+    <PlantListContext.Provider value={contextValue}>
       {children}
     </PlantListContext.Provider>
   )
